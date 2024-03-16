@@ -11,6 +11,7 @@ from torchbearer.metrics import TopKCategoricalAccuracy
 from torchbearer import Trial
 import numpy
 from torchbearer import Callback
+import os
 # fix random seed for reproducibility
 seed = 7
 torch.manual_seed(seed)
@@ -98,7 +99,7 @@ for layer_size in hidden_layers:
   trial = Trial(model, optimiser, loss, metrics=metrics, callbacks=[early_stopping]).to(device)
   trial.with_generators(trainloader, test_generator=testloader)
 
-  history = trial.run(epochs=10, verbose=0)
+  history = trial.run(epochs=100, verbose=0)
   if early_stopping.early_stop:
         stopped_layers.extend(early_stopping.stopped_layers)
    
@@ -124,34 +125,41 @@ for layer_size in hidden_layers:
   test_acc5.append(test_accuracy2)
 
 
+results_dir = '/Users/jackhilton-jones/Deep-Learning-Learning/Deep-Learning-Learning'
+if not os.path.exists(results_dir):
+    os.makedirs(results_dir)
 
+# Saving Figure 1
 plt.figure()
-plt.plot(hidden_layers, train_acc5, label = 'Train Top 5 Accuracy')
-plt.plot(hidden_layers, test_acc5, label = 'Test Top 5 Accuracy')
-plt.xlabel("NUmber of Hidden Units")
+plt.plot(hidden_layers, train_acc5, label='Train Top 5 Accuracy')
+plt.plot(hidden_layers, test_acc5, label='Test Top 5 Accuracy')
+plt.xlabel("Number of Hidden Units")
 plt.ylabel("Top 5 Loss")
 plt.title("Comparison between the Train Top 5 Loss and the Test Top 5 Loss")
 plt.legend()
-plt.savefig('/Users/jackhilton-jones/Deep_Learning/21')
+plt.savefig(os.path.join(results_dir, 'figure1.png'))
 plt.show()
 
+# Saving Figure 2
 plt.figure()
-plt.plot(hidden_layers, train_loss, label = 'Train Loss')
-plt.plot(hidden_layers, test_loss, label ='Test Loss')
+plt.plot(hidden_layers, train_loss, label='Train Loss')
+plt.plot(hidden_layers, test_loss, label='Test Loss')
 plt.xlabel("Number of Hidden Units")
 plt.ylabel("Loss")
 plt.title("Comparison between the Quantity of Hidden Layers to Train Loss and Test Loss")
 plt.legend()
-plt.savefig('/Users/jackhilton-jones/Deep_Learning/22')
+plt.savefig(os.path.join(results_dir, 'figure2.png'))
 plt.show()
 
+# Saving Figure 3
 plt.figure()
-plt.plot(hidden_layers, train_acc, label = 'Train Accuracy')
-plt.plot(hidden_layers, test_acc, label ='Test Accuracy')
+plt.plot(hidden_layers, train_acc, label='Train Accuracy')
+plt.plot(hidden_layers, test_acc, label='Test Accuracy')
 plt.xlabel("Number of Hidden Units")
 plt.ylabel("Accuracy")
 plt.title("Comparison between the Quantity of Hidden Layers to Train Accuracy and Test Accuracy")
 plt.legend()
-plt.savefig('/Users/jackhilton-jones/Deep_Learning/23')
+plt.savefig(os.path.join(results_dir, 'figure3.png'))
 plt.show()
+
 print("Training stopped early for layers:", stopped_layers)
