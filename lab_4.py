@@ -10,7 +10,6 @@ from torchvision.datasets import MNIST
 from torchbearer.metrics import TopKCategoricalAccuracy
 from torchbearer import Trial
 import numpy
-from torchbearer import Callback
 import os
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -68,7 +67,7 @@ for layer_size in hidden_layers:
   trial = Trial(model, optimiser, loss, metrics=metrics).to(device)
   trial.with_generators(trainloader, test_generator=testloader)
 
-  history = trial.run(epochs=100, verbose=0)
+  history = trial.run(epochs=1, verbose=0)
    
   
   
