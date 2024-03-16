@@ -47,36 +47,6 @@ class BaselineModel(nn.Module):
         out = self.fc2(out)
         return out
 
-class EarlyStopping(Callback):
-    def __init__(self, patience=5, delta=0, layer_size=None):
-        super(EarlyStopping, self).__init__()
-        self.patience = patience
-        self.delta = delta
-        self.best_loss = None
-        self.counter = 0
-        self.early_stop = False
-        self.layer_size = layer_size
-        self.stopped_layers = []
-
-    def on_end_epoch(self, state):
-        # Use the validation loss as the metric to monitor
-        val_loss = state['val_loss'] if 'val_loss' in state else None
-
-        if val_loss is None:
-            return  # Skip if validation loss is not available
-
-        if self.best_loss is None:
-            self.best_loss = val_loss
-        elif val_loss < self.best_loss - self.delta:
-            self.best_loss = val_loss
-            self.counter = 0
-        else:
-            self.counter += 1
-            if self.counter >= self.patience:
-                self.early_stop = True
-                state[torchbearer.STOP_TRAINING] = True
-                self.stopped_layers.append(self.layer_size)
-
 hidden_layers = [50, 100, 500, 1000, 2000, 10000, 20000, 40000, 80000, 100000, 125000, 175000, 200000, 225000, 250000, 300000, 350000, 375000, 400000, 450000]
 test_acc = []
 train_acc = []
@@ -95,13 +65,10 @@ for layer_size in hidden_layers:
   loss = nn.CrossEntropyLoss()
   optimiser = optim.SGD(model.parameters(), lr=0.01)
   metrics = ['accuracy', 'loss', TopKCategoricalAccuracy(k=5)]
-  early_stopping = EarlyStopping(patience=5, delta=0.01, layer_size=layer_size)
-  trial = Trial(model, optimiser, loss, metrics=metrics, callbacks=[early_stopping]).to(device)
+  trial = Trial(model, optimiser, loss, metrics=metrics).to(device)
   trial.with_generators(trainloader, test_generator=testloader)
 
   history = trial.run(epochs=100, verbose=0)
-  if early_stopping.early_stop:
-        stopped_layers.extend(early_stopping.stopped_layers)
    
   
   
