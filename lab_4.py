@@ -45,7 +45,7 @@ class BaselineModel(nn.Module):
         out = self.fc2(out)
         return out
 
-hidden_layers = [50, 100]
+hidden_layers = [50]
 test_acc = []
 train_acc = []
 train_loss = []
