@@ -45,7 +45,7 @@ class BaselineModel(nn.Module):
         out = self.fc2(out)
         return out
 
-hidden_layers = [50, 100, 500, 1000, 2000, 10000, 20000, 40000, 80000, 100000, 125000, 175000, 200000, 225000, 250000, 300000, 350000, 375000, 400000, 450000]
+hidden_layers = [50, 100]
 test_acc = []
 train_acc = []
 train_loss = []
@@ -60,7 +60,7 @@ for layer_size in hidden_layers:
     optimizer = optim.Adam(model.parameters())
     trial = Trial(model, optimizer, loss_fn, metrics=['accuracy', 'loss']).to(device)
     trial.with_generators(trainloader, val_generator=testloader)
-    history = trial.run(epochs=100, verbose=0)
+    history = trial.run(epochs=1, verbose=0)
 
     # Extract validation loss from the history object
     val_loss = history[-1]['val_loss']
