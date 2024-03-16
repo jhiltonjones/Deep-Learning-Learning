@@ -58,6 +58,7 @@ train_acc5 =[]
 test_acc5 = []
 
 for layer_size in hidden_layers:
+  print("inside for loop")
   model = BaselineModel(784, layer_size, 10).to(device)
   model.to(device)
   loss = nn.CrossEntropyLoss()
