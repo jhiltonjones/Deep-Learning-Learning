@@ -125,7 +125,7 @@ for layer_size in hidden_layers:
   test_acc5.append(test_accuracy2)
 
 
-results_dir = '/Users/jackhilton-jones/Deep-Learning-Learning/Deep-Learning-Learning'
+results_dir = 'lab4/results'
 if not os.path.exists(results_dir):
     os.makedirs(results_dir)
 
