@@ -34,7 +34,7 @@ testset = MNIST(".", train=False, download=True, transform=transform)
 # create data loaders
 trainloader = DataLoader(trainset, batch_size=128, shuffle=True)
 testloader = DataLoader(testset, batch_size=128, shuffle=True)
-
+print("data created")
 # define baseline model
 class BaselineModel(nn.Module):
     def __init__(self, input_size, hidden_size, num_classes):
@@ -47,7 +47,7 @@ class BaselineModel(nn.Module):
         out = F.relu(out)
         out = self.fc2(out)
         return out
-
+print("before hidden layers")
 hidden_layers = [50, 100, 500, 1000, 2000, 10000, 20000, 40000, 80000, 100000, 125000, 175000, 200000, 225000, 250000, 300000, 350000, 375000, 400000, 450000]
 test_acc = []
 train_acc = []
