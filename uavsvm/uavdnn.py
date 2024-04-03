@@ -47,33 +47,34 @@ class NeuralNet(nn.Module):
         return self.layers(x)
 
 def objective(trial):
-    num_layers = trial.suggest_int('num_layers', 1, 3)
-    num_neurons = trial.suggest_int('num_neurons', 64, 256)
-    dropout_rate = trial.suggest_float('dropout_rate', 0.1, 0.5)
+    num_layers = trial.suggest_int('num_layers', 1, 5)
+    num_neurons = trial.suggest_int('num_neurons', 32, 512)
+    dropout_rate = trial.suggest_float('dropout_rate', 0.1, 0.7)
     lr = trial.suggest_float('lr', 1e-5, 1e-1, log=True)
+    optimizer_name = trial.suggest_categorical('optimizer', ['Adam', 'RMSprop', 'SGD'])
+    lr_decay = trial.suggest_float('lr_decay', 0.95, 1.0)
 
     model = NeuralNet(num_layers, num_neurons, dropout_rate).to('cpu')
-    optimizer = Adam(model.parameters(), lr=lr)
+    optimizer = getattr(torch.optim, optimizer_name)(model.parameters(), lr=lr)
     criterion = nn.CrossEntropyLoss()
-
-    train_loader = DataLoader(dataset=train_dataset, batch_size=64, shuffle=True)
-    test_loader = DataLoader(dataset=test_dataset, batch_size=64, shuffle=False)
-
+    scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=lr_decay)
+    trainloader = DataLoader(dataset=train_dataset, batch_size=64, shuffle=True)
+    testloader = DataLoader(dataset=test_dataset, batch_size=64, shuffle=False)
     
     for epoch in range(500):  
         model.train()
-        for batch_x, batch_y in train_loader:
+        for batch_x, batch_y in trainloader:
             optimizer.zero_grad()
             output = model(batch_x)
             loss = criterion(output, batch_y)
             loss.backward()
             optimizer.step()
-
+            scheduler.step()
         
         model.eval()
         correct, total = 0, 0
         with torch.no_grad():
-            for batch_x, batch_y in test_loader:
+            for batch_x, batch_y in testloader:
                 output = model(batch_x)
                 _, predicted = torch.max(output.data, 1)
                 total += batch_y.size(0)
@@ -88,23 +89,26 @@ def objective(trial):
     return accuracy
 
 
-study = optuna.create_study(direction='maximize')
-study.optimize(objective, n_trials=50)  
 
+study = optuna.create_study(direction='maximize')
+study.optimize(objective, n_trials=500)  
 
 print("Best parameters: ", study.best_params)
 print("Best accuracy: ", study.best_value)
 
 best_params = study.best_params
 best_model = NeuralNet(best_params['num_layers'], best_params['num_neurons'], best_params['dropout_rate']).to('cpu')
-optimizer = Adam(best_model.parameters(), lr=best_params['lr'])
+
+# Create optimizer with the selected type and parameters
+optimizer_class = getattr(torch.optim, best_params['optimizer'])
+optimizer = optimizer_class(best_model.parameters(), lr=best_params['lr'])
 criterion = nn.CrossEntropyLoss()
 
+full_train_loader = DataLoader(dataset=TensorDataset(torch.tensor(scaler.transform(X), dtype=torch.float32), 
+                                                     torch.tensor(y, dtype=torch.long)), 
+                               batch_size=64, shuffle=True)
 
-full_train_loader = DataLoader(dataset=TensorDataset(torch.tensor(X_scaled, dtype=torch.float32), torch.tensor(y, dtype=torch.long)), batch_size=64, shuffle=True)
-
-
-for epoch in range(1000):  
+for epoch in range(1000):
     best_model.train()
     for batch_x, batch_y in full_train_loader:
         optimizer.zero_grad()
@@ -113,7 +117,5 @@ for epoch in range(1000):
         loss.backward()
         optimizer.step()
 
-# Save the model
 torch.save(best_model.state_dict(), '/lyceum/jhj1g23/Deep-Learning-Learning/uav_data/WildFires/best_model.pth')
-
 print("Model saved to '/lyceum/jhj1g23/Deep-Learning-Learning/uav_data/WildFires/best_model.pth'")
