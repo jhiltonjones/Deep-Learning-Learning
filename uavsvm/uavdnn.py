@@ -25,6 +25,7 @@ X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
 y_test_tensor = torch.tensor(y_test, dtype=torch.long)
 train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
 test_dataset = TensorDataset(X_test_tensor, y_test_tensor)
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 class NeuralNet(nn.Module):
     def __init__(self, num_layers, num_neurons, dropout_rate):
@@ -97,9 +98,8 @@ print("Best parameters: ", study.best_params)
 print("Best accuracy: ", study.best_value)
 
 best_params = study.best_params
-best_model = NeuralNet(best_params['num_layers'], best_params['num_neurons'], best_params['dropout_rate']).to('cpu')
+best_model = NeuralNet(best_params['num_layers'], best_params['num_neurons'], best_params['dropout_rate']).to(device)
 
-# Create optimizer with the selected type and parameters
 optimizer_class = getattr(torch.optim, best_params['optimizer'])
 optimizer = optimizer_class(best_model.parameters(), lr=best_params['lr'])
 criterion = nn.CrossEntropyLoss()
@@ -111,6 +111,7 @@ full_train_loader = DataLoader(dataset=TensorDataset(torch.tensor(scaler.transfo
 for epoch in range(1000):
     best_model.train()
     for batch_x, batch_y in full_train_loader:
+        batch_x, batch_y = batch_x.to(device), batch_y.to(device)
         optimizer.zero_grad()
         output = best_model(batch_x)
         loss = criterion(output, batch_y)
