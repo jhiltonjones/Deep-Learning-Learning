@@ -3,7 +3,6 @@ import torch.nn as nn
 import pandas as pd
 import numpy as np
 from torchvision import transforms
-model_path = '/Users/jackhilton-jones/Deep-Learning-Learning/Deep-Learning-Learning/best_model2.pth'
 
 # Define the model class (this should be the same as when the model was trained)
 class NeuralNet(nn.Module):
