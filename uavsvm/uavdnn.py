@@ -117,7 +117,30 @@ for epoch in range(1000):
         optimizer.step()
         scheduler.step()
 
-torch.save(best_model.state_dict(), '/lyceum/jhj1g23/Deep-Learning-Learning/uav_data/WildFires/best_model2.pth')
+torch.save(best_model.state_dict(), '/lyceum/jhj1g23/Deep-Learning-Learning/uav_data/WildFires/best_model3.pth')
+print("Model saved to '/lyceum/jhj1g23/Deep-Learning-Learning/uav_data/WildFires/best_model3.pth'")
+from sklearn.metrics import classification_report
 
-print("Model saved to '/lyceum/jhj1g23/Deep-Learning-Learning/uav_data/WildFires/best_model2.pth'")
+
+# Load best model for evaluation
+best_model.load_state_dict(torch.load('/lyceum/jhj1g23/Deep-Learning-Learning/uav_data/WildFires/best_model3.pth'))
+
+# Evaluate on Test Data
+best_model.eval()
+all_predictions = []
+all_targets = []
+with torch.no_grad():
+    for batch_x, batch_y in DataLoader(test_dataset, batch_size=64, shuffle=False):
+        batch_x, batch_y = batch_x.to(device), batch_y.to(device)
+        outputs = best_model(batch_x)
+        _, predicted = torch.max(outputs, 1)
+        all_predictions.extend(predicted.cpu().numpy())
+        all_targets.extend(batch_y.cpu().numpy())
+
+# Generate Classification Report
+print(classification_report(all_targets, all_predictions, target_names=label_encoder.classes_))
+
+# Save the model for future predictions
+
+
 
