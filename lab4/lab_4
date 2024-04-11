@@ -94,6 +94,7 @@ stopped_layers = []
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 for layer_size in hidden_layers:
+  print(f'Layer size: {layer_size}')
   model = BaselineModel(784, layer_size, 10).to(device)
   model.to(device)
   loss = nn.CrossEntropyLoss()
