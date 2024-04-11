@@ -11,6 +11,7 @@ from torchbearer.metrics import TopKCategoricalAccuracy
 from torchbearer import Trial
 import numpy
 from torchbearer import Callback
+
 # fix random seed for reproducibility
 torch.manual_seed(seed)
 torch.backends.cudnn.deterministic = True
@@ -81,7 +82,7 @@ class EarlyStopping(Callback):
                 state[torchbearer.STOP_TRAINING] = True
                 self.stopped_layers.append(self.layer_size)
 
-hidden_layers = [50, 100, 500, 1000, 2000, 10000, 20000, 40000, 80000, 100000, 125000, 175000, 200000, 225000, 250000, 300000, 350000, 375000, 400000, 450000]
+hidden_layers = [50, 500, 1000, 10000, 50000, 100000, 150000, 200000, 250000, 300000, 350000, 450000]
 test_acc = []
 train_acc = []
 train_loss = []
