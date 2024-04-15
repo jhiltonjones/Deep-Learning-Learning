@@ -40,7 +40,7 @@ dropout_rate = 0.12074189901206918  # Optuna's best dropout rate
 activation_fn = 'LeakyReLU'  # Optuna's best activation function
 
 model = NeuralNet(num_layers, num_neurons, dropout_rate, activation_fn)
-model.load_state_dict(torch.load('/Users/jackhilton-jones/Deep-Learning-Learning/Deep-Learning-Learning/best_model2.pth'))
+model.load_state_dict(torch.load('/lyceum/jhj1g23/Deep-Learning-Learning/uav_data/WildFires/best_model2.pth'))
 model.eval()
 
 
