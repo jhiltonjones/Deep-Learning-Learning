@@ -1,0 +1,52 @@
+Running SLURM prolog script on rose07.cluster.local
+===============================================================================
+Job started on Tue Apr  2 20:44:14 BST 2024
+Job ID          : 5764295
+Job name        : lauch.sh
+WorkDir         : /mainfs/lyceum/jhj1g23/Deep-Learning-Learning/uavsvm
+Command         : /mainfs/lyceum/jhj1g23/Deep-Learning-Learning/uavsvm/lauch.sh
+Partition       : a100
+Num hosts       : 1
+Num cores       : 48
+Num of tasks    : 1
+Hosts allocated : rose07
+Job Output Follows ...
+===============================================================================
+The best parameters are {'C': 10.0, 'gamma': 1000.0} with a score of 0.81
+              precision    recall  f1-score   support
+
+           0       0.84      0.24      0.37        68
+           1       0.84      0.99      0.91       275
+
+    accuracy                           0.84       343
+   macro avg       0.84      0.61      0.64       343
+weighted avg       0.84      0.84      0.80       343
+
+[[ 16  52]
+ [  3 272]]
+Traceback (most recent call last):
+  File "/mainfs/lyceum/jhj1g23/Deep-Learning-Learning/uavsvm/SVM.py", line 57, in <module>
+    plt.figure(figsize=(8, 6))
+  File "/lyceum/jhj1g23/.local/lib/python3.9/site-packages/matplotlib/_api/__init__.py", line 217, in __getattr__
+    raise AttributeError(
+AttributeError: module 'matplotlib' has no attribute 'figure'
+==============================================================================
+Running epilogue script on rose07.
+
+Submit time  : 2024-04-02T20:44:13
+Start time   : 2024-04-02T20:44:14
+End time     : 2024-04-02T22:53:16
+Elapsed time : 02:09:02 (Timelimit=03:00:00)
+
+Job ID: 5764295
+Cluster: i5
+User/Group: jhj1g23/fp
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 48
+CPU Utilized: 1-00:35:36
+CPU Efficiency: 23.82% of 4-07:13:36 core-walltime
+Job Wall-clock time: 02:09:02
+Memory Utilized: 3.85 GB
+Memory Efficiency: 0.00% of 16.00 B
+

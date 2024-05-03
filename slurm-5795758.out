@@ -1,0 +1,35 @@
+Running SLURM prolog script on rose04.cluster.local
+===============================================================================
+Job started on Mon Apr  8 02:37:28 BST 2024
+Job ID          : 5795758
+Job name        : lauch.sh
+WorkDir         : /mainfs/lyceum/jhj1g23/Deep-Learning-Learning
+Command         : /mainfs/lyceum/jhj1g23/Deep-Learning-Learning/lauch.sh
+Partition       : a100
+Num hosts       : 1
+Num cores       : 48
+Num of tasks    : 1
+Hosts allocated : rose04
+Job Output Follows ...
+===============================================================================
+Predicted Class: fire, Probability: 1.0000
+==============================================================================
+Running epilogue script on rose04.
+
+Submit time  : 2024-04-08T02:37:28
+Start time   : 2024-04-08T02:37:28
+End time     : 2024-04-08T02:37:30
+Elapsed time : 00:00:02 (Timelimit=01:00:00)
+
+Job ID: 5795758
+Cluster: i5
+User/Group: jhj1g23/fp
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 48
+CPU Utilized: 00:00:10
+CPU Efficiency: 10.42% of 00:01:36 core-walltime
+Job Wall-clock time: 00:00:02
+Memory Utilized: 2.51 MB
+Memory Efficiency: 0.00% of 16.00 B
+

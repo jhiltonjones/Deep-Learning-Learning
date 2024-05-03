@@ -1,0 +1,50 @@
+Running SLURM prolog script on rose07.cluster.local
+===============================================================================
+Job started on Tue Apr  2 20:33:40 BST 2024
+Job ID          : 5764281
+Job name        : lauch.sh
+WorkDir         : /mainfs/lyceum/jhj1g23/Deep-Learning-Learning/uavsvm
+Command         : /mainfs/lyceum/jhj1g23/Deep-Learning-Learning/uavsvm/lauch.sh
+Partition       : a100
+Num hosts       : 1
+Num cores       : 48
+Num of tasks    : 1
+Hosts allocated : rose07
+Job Output Follows ...
+===============================================================================
+Lmod has detected the following error: The following module(s) are unknown:
+"conda/pytorch_deeplearning"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore-cache load "conda/pytorch_deeplearning"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Traceback (most recent call last):
+  File "/mainfs/lyceum/jhj1g23/Deep-Learning-Learning/uavsvm/SVM.py", line 4, in <module>
+    from sklearn.model_selection import train_test_split, GridSearchCV, StratifiedShuffleSplit
+ModuleNotFoundError: No module named 'sklearn'
+==============================================================================
+Running epilogue script on rose07.
+
+Submit time  : 2024-04-02T20:33:39
+Start time   : 2024-04-02T20:33:40
+End time     : 2024-04-02T20:33:43
+Elapsed time : 00:00:03 (Timelimit=03:00:00)
+
+Job ID: 5764281
+Cluster: i5
+User/Group: jhj1g23/fp
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 48
+CPU Utilized: 00:00:07
+CPU Efficiency: 4.86% of 00:02:24 core-walltime
+Job Wall-clock time: 00:00:03
+Memory Utilized: 2.27 MB
+Memory Efficiency: 0.00% of 16.00 B
+

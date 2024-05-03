@@ -1,0 +1,538 @@
+Running SLURM prolog script on rose07.cluster.local
+===============================================================================
+Job started on Wed Apr  3 16:22:46 BST 2024
+Job ID          : 5768415
+Job name        : lauch.sh
+WorkDir         : /mainfs/lyceum/jhj1g23/Deep-Learning-Learning/uavsvm
+Command         : /mainfs/lyceum/jhj1g23/Deep-Learning-Learning/uavsvm/lauch.sh
+Partition       : a100
+Num hosts       : 1
+Num cores       : 48
+Num of tasks    : 1
+Hosts allocated : rose07
+Job Output Follows ...
+===============================================================================
+[I 2024-04-03 16:23:30,652] A new study created in memory with name: no-name-72778400-5b50-4185-b649-e39bf601ce61
+[I 2024-04-03 16:24:12,175] Trial 0 finished with value: 0.7821011673151751 and parameters: {'num_layers': 3, 'num_neurons': 95, 'dropout_rate': 0.4426259839798392, 'lr': 0.008586660464973446, 'optimizer': 'RMSprop', 'lr_decay': 0.9539742118743993}. Best is trial 0 with value: 0.7821011673151751.
+[I 2024-04-03 16:24:53,505] Trial 1 finished with value: 0.7782101167315175 and parameters: {'num_layers': 4, 'num_neurons': 343, 'dropout_rate': 0.10574519793060372, 'lr': 0.03438987613575639, 'optimizer': 'RMSprop', 'lr_decay': 0.9678638589993721}. Best is trial 0 with value: 0.7821011673151751.
+[I 2024-04-03 16:25:14,386] Trial 2 finished with value: 0.7762645914396887 and parameters: {'num_layers': 1, 'num_neurons': 403, 'dropout_rate': 0.563447931149026, 'lr': 0.019497501895105792, 'optimizer': 'Adam', 'lr_decay': 0.9548189775117538}. Best is trial 0 with value: 0.7821011673151751.
+[I 2024-04-03 16:25:39,542] Trial 3 finished with value: 0.77431906614786 and parameters: {'num_layers': 2, 'num_neurons': 98, 'dropout_rate': 0.4780722726706492, 'lr': 0.07975088294474626, 'optimizer': 'Adam', 'lr_decay': 0.950491735826632}. Best is trial 0 with value: 0.7821011673151751.
+[I 2024-04-03 16:26:05,440] Trial 4 finished with value: 0.7859922178988327 and parameters: {'num_layers': 2, 'num_neurons': 144, 'dropout_rate': 0.17815195482368523, 'lr': 0.023665121893349267, 'optimizer': 'Adam', 'lr_decay': 0.9768015423777993}. Best is trial 4 with value: 0.7859922178988327.
+[I 2024-04-03 16:26:36,944] Trial 5 finished with value: 0.7840466926070039 and parameters: {'num_layers': 3, 'num_neurons': 120, 'dropout_rate': 0.39152504323634363, 'lr': 0.027048296283265494, 'optimizer': 'Adam', 'lr_decay': 0.9931026577550854}. Best is trial 4 with value: 0.7859922178988327.
+[I 2024-04-03 16:26:37,017] Trial 6 pruned. 
+[I 2024-04-03 16:26:37,060] Trial 7 pruned. 
+[I 2024-04-03 16:27:19,331] Trial 8 finished with value: 0.7859922178988327 and parameters: {'num_layers': 4, 'num_neurons': 262, 'dropout_rate': 0.5464972268372159, 'lr': 0.0004955096610020476, 'optimizer': 'Adam', 'lr_decay': 0.9964930822838771}. Best is trial 4 with value: 0.7859922178988327.
+[I 2024-04-03 16:27:19,372] Trial 9 pruned. 
+[I 2024-04-03 16:27:23,328] Trial 10 pruned. 
+[I 2024-04-03 16:27:23,417] Trial 11 pruned. 
+[I 2024-04-03 16:27:23,517] Trial 12 pruned. 
+[I 2024-04-03 16:27:25,614] Trial 13 pruned. 
+[I 2024-04-03 16:27:25,711] Trial 14 pruned. 
+[I 2024-04-03 16:27:28,027] Trial 15 pruned. 
+[I 2024-04-03 16:27:28,123] Trial 16 pruned. 
+[I 2024-04-03 16:27:28,348] Trial 17 pruned. 
+[I 2024-04-03 16:27:28,408] Trial 18 pruned. 
+[I 2024-04-03 16:27:32,579] Trial 19 pruned. 
+[I 2024-04-03 16:28:07,676] Trial 20 finished with value: 0.7859922178988327 and parameters: {'num_layers': 3, 'num_neurons': 239, 'dropout_rate': 0.6426331532320841, 'lr': 0.009371268303670216, 'optimizer': 'Adam', 'lr_decay': 0.9943271466361631}. Best is trial 4 with value: 0.7859922178988327.
+[I 2024-04-03 16:28:07,768] Trial 21 pruned. 
+[I 2024-04-03 16:28:07,841] Trial 22 pruned. 
+[I 2024-04-03 16:28:07,937] Trial 23 pruned. 
+[I 2024-04-03 16:28:08,029] Trial 24 pruned. 
+[I 2024-04-03 16:28:54,825] Trial 25 finished with value: 0.7782101167315175 and parameters: {'num_layers': 4, 'num_neurons': 377, 'dropout_rate': 0.642675162812529, 'lr': 0.00033824439328958284, 'optimizer': 'Adam', 'lr_decay': 0.9858914220353778}. Best is trial 4 with value: 0.7859922178988327.
+[I 2024-04-03 16:28:54,899] Trial 26 pruned. 
+[I 2024-04-03 16:28:54,989] Trial 27 pruned. 
+[I 2024-04-03 16:28:55,074] Trial 28 pruned. 
+[I 2024-04-03 16:28:55,318] Trial 29 pruned. 
+[I 2024-04-03 16:28:55,392] Trial 30 pruned. 
+[I 2024-04-03 16:28:55,475] Trial 31 pruned. 
+[I 2024-04-03 16:29:21,815] Trial 32 finished with value: 0.7976653696498055 and parameters: {'num_layers': 2, 'num_neurons': 136, 'dropout_rate': 0.1186320233739073, 'lr': 0.02511164744416537, 'optimizer': 'Adam', 'lr_decay': 0.9914229910995863}. Best is trial 32 with value: 0.7976653696498055.
+[I 2024-04-03 16:29:41,515] Trial 33 finished with value: 0.7879377431906615 and parameters: {'num_layers': 1, 'num_neurons': 86, 'dropout_rate': 0.10224915337911927, 'lr': 0.04275037882947505, 'optimizer': 'Adam', 'lr_decay': 0.9908285072495466}. Best is trial 32 with value: 0.7976653696498055.
+[I 2024-04-03 16:30:01,193] Trial 34 finished with value: 0.7840466926070039 and parameters: {'num_layers': 1, 'num_neurons': 79, 'dropout_rate': 0.10310282737102523, 'lr': 0.04747494169506989, 'optimizer': 'Adam', 'lr_decay': 0.9904042273662707}. Best is trial 32 with value: 0.7976653696498055.
+[I 2024-04-03 16:30:01,873] Trial 35 pruned. 
+[I 2024-04-03 16:30:01,944] Trial 36 pruned. 
+[I 2024-04-03 16:30:02,006] Trial 37 pruned. 
+[I 2024-04-03 16:30:02,063] Trial 38 pruned. 
+[I 2024-04-03 16:30:02,136] Trial 39 pruned. 
+[I 2024-04-03 16:30:21,540] Trial 40 finished with value: 0.7879377431906615 and parameters: {'num_layers': 1, 'num_neurons': 52, 'dropout_rate': 0.19606346353840898, 'lr': 0.09933190289458242, 'optimizer': 'Adam', 'lr_decay': 0.9967891878724902}. Best is trial 32 with value: 0.7976653696498055.
+[I 2024-04-03 16:30:40,991] Trial 41 finished with value: 0.7879377431906615 and parameters: {'num_layers': 1, 'num_neurons': 56, 'dropout_rate': 0.18604172526306761, 'lr': 0.05785667739923601, 'optimizer': 'Adam', 'lr_decay': 0.996478237511596}. Best is trial 32 with value: 0.7976653696498055.
+[I 2024-04-03 16:31:00,558] Trial 42 finished with value: 0.7898832684824902 and parameters: {'num_layers': 1, 'num_neurons': 59, 'dropout_rate': 0.1862992417304551, 'lr': 0.09233124318449461, 'optimizer': 'Adam', 'lr_decay': 0.9977162482802533}. Best is trial 32 with value: 0.7976653696498055.
+[I 2024-04-03 16:31:00,616] Trial 43 pruned. 
+[I 2024-04-03 16:31:20,360] Trial 44 finished with value: 0.8035019455252919 and parameters: {'num_layers': 1, 'num_neurons': 87, 'dropout_rate': 0.1216806310066756, 'lr': 0.0639045325287511, 'optimizer': 'Adam', 'lr_decay': 0.9997202169755388}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:31:40,166] Trial 45 finished with value: 0.7879377431906615 and parameters: {'num_layers': 1, 'num_neurons': 97, 'dropout_rate': 0.10063957472292728, 'lr': 0.07347250082829518, 'optimizer': 'Adam', 'lr_decay': 0.9998606244008927}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:31:59,887] Trial 46 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 85, 'dropout_rate': 0.12706712213967175, 'lr': 0.03535379443919935, 'optimizer': 'Adam', 'lr_decay': 0.9951653735617381}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:31:59,940] Trial 47 pruned. 
+[I 2024-04-03 16:32:19,683] Trial 48 finished with value: 0.7840466926070039 and parameters: {'num_layers': 1, 'num_neurons': 108, 'dropout_rate': 0.16107516556539195, 'lr': 0.017582076572259672, 'optimizer': 'Adam', 'lr_decay': 0.9945183963357106}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:32:39,586] Trial 49 finished with value: 0.7840466926070039 and parameters: {'num_layers': 1, 'num_neurons': 129, 'dropout_rate': 0.2507688415178613, 'lr': 0.03377191236784075, 'optimizer': 'Adam', 'lr_decay': 0.988636129662016}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:32:39,655] Trial 50 pruned. 
+[I 2024-04-03 16:32:39,713] Trial 51 pruned. 
+[I 2024-04-03 16:32:39,772] Trial 52 pruned. 
+[I 2024-04-03 16:32:39,830] Trial 53 pruned. 
+[I 2024-04-03 16:32:39,901] Trial 54 pruned. 
+[I 2024-04-03 16:32:39,959] Trial 55 pruned. 
+[I 2024-04-03 16:32:40,013] Trial 56 pruned. 
+[I 2024-04-03 16:33:04,344] Trial 57 finished with value: 0.7879377431906615 and parameters: {'num_layers': 2, 'num_neurons': 32, 'dropout_rate': 0.1738273503856907, 'lr': 0.03232158857684427, 'optimizer': 'Adam', 'lr_decay': 0.9986129818032913}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:33:04,400] Trial 58 pruned. 
+[I 2024-04-03 16:33:04,459] Trial 59 pruned. 
+[I 2024-04-03 16:33:31,140] Trial 60 finished with value: 0.7879377431906615 and parameters: {'num_layers': 2, 'num_neurons': 137, 'dropout_rate': 0.15987656418374996, 'lr': 0.01577633997590513, 'optimizer': 'Adam', 'lr_decay': 0.9892343088167699}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:33:31,199] Trial 61 pruned. 
+[I 2024-04-03 16:33:50,713] Trial 62 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 66, 'dropout_rate': 0.11874469674484447, 'lr': 0.06883015572270017, 'optimizer': 'Adam', 'lr_decay': 0.9967751401247823}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:33:50,772] Trial 63 pruned. 
+[I 2024-04-03 16:34:10,435] Trial 64 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 90, 'dropout_rate': 0.10042587703912717, 'lr': 0.07525576022807601, 'optimizer': 'Adam', 'lr_decay': 0.9978438031173177}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:34:10,495] Trial 65 pruned. 
+[I 2024-04-03 16:34:10,566] Trial 66 pruned. 
+[I 2024-04-03 16:34:10,620] Trial 67 pruned. 
+[I 2024-04-03 16:34:10,681] Trial 68 pruned. 
+[I 2024-04-03 16:34:10,754] Trial 69 pruned. 
+[I 2024-04-03 16:34:11,918] Trial 70 pruned. 
+[I 2024-04-03 16:34:11,977] Trial 71 pruned. 
+[I 2024-04-03 16:34:12,037] Trial 72 pruned. 
+[I 2024-04-03 16:34:12,097] Trial 73 pruned. 
+[I 2024-04-03 16:34:12,156] Trial 74 pruned. 
+[I 2024-04-03 16:34:12,215] Trial 75 pruned. 
+[I 2024-04-03 16:34:12,276] Trial 76 pruned. 
+[I 2024-04-03 16:34:12,347] Trial 77 pruned. 
+[I 2024-04-03 16:34:12,406] Trial 78 pruned. 
+[I 2024-04-03 16:34:31,791] Trial 79 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 41, 'dropout_rate': 0.10929075355399699, 'lr': 0.09949899934817322, 'optimizer': 'Adam', 'lr_decay': 0.9934234179509873}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:34:31,843] Trial 80 pruned. 
+[I 2024-04-03 16:34:51,351] Trial 81 finished with value: 0.7898832684824902 and parameters: {'num_layers': 1, 'num_neurons': 58, 'dropout_rate': 0.14870399982681803, 'lr': 0.08612833908503394, 'optimizer': 'Adam', 'lr_decay': 0.9959838355137692}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:35:10,924] Trial 82 finished with value: 0.7859922178988327 and parameters: {'num_layers': 1, 'num_neurons': 74, 'dropout_rate': 0.1488160748610261, 'lr': 0.0542871096084764, 'optimizer': 'Adam', 'lr_decay': 0.9901209338797056}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:35:10,984] Trial 83 pruned. 
+[I 2024-04-03 16:35:30,887] Trial 84 finished with value: 0.7976653696498055 and parameters: {'num_layers': 1, 'num_neurons': 121, 'dropout_rate': 0.1322502275382026, 'lr': 0.06295385312815202, 'optimizer': 'Adam', 'lr_decay': 0.9985047087617615}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:35:50,844] Trial 85 finished with value: 0.7996108949416343 and parameters: {'num_layers': 1, 'num_neurons': 119, 'dropout_rate': 0.13216654628703162, 'lr': 0.06157525523775862, 'optimizer': 'Adam', 'lr_decay': 0.9990145787080575}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:35:50,906] Trial 86 pruned. 
+[I 2024-04-03 16:36:10,814] Trial 87 finished with value: 0.7976653696498055 and parameters: {'num_layers': 1, 'num_neurons': 122, 'dropout_rate': 0.12695840749005663, 'lr': 0.0632089996435392, 'optimizer': 'Adam', 'lr_decay': 0.997812350279087}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:36:10,883] Trial 88 pruned. 
+[I 2024-04-03 16:36:30,858] Trial 89 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 147, 'dropout_rate': 0.1674275391868291, 'lr': 0.032168510665138345, 'optimizer': 'Adam', 'lr_decay': 0.9992914541625727}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:36:30,920] Trial 90 pruned. 
+[I 2024-04-03 16:36:50,718] Trial 91 finished with value: 0.791828793774319 and parameters: {'num_layers': 1, 'num_neurons': 117, 'dropout_rate': 0.16848367730184982, 'lr': 0.027413566610406052, 'optimizer': 'Adam', 'lr_decay': 0.9993419161948263}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:36:50,779] Trial 92 pruned. 
+[I 2024-04-03 16:36:50,841] Trial 93 pruned. 
+[I 2024-04-03 16:36:50,958] Trial 94 pruned. 
+[I 2024-04-03 16:37:10,874] Trial 95 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 108, 'dropout_rate': 0.12093765277915086, 'lr': 0.06380365391718872, 'optimizer': 'Adam', 'lr_decay': 0.9989459783945132}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:37:10,934] Trial 96 pruned. 
+[I 2024-04-03 16:37:10,996] Trial 97 pruned. 
+[I 2024-04-03 16:37:30,713] Trial 98 finished with value: 0.7898832684824902 and parameters: {'num_layers': 1, 'num_neurons': 91, 'dropout_rate': 0.17289882510032348, 'lr': 0.05008376402394485, 'optimizer': 'Adam', 'lr_decay': 0.9919749600699861}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:37:30,774] Trial 99 pruned. 
+[I 2024-04-03 16:37:30,837] Trial 100 pruned. 
+[I 2024-04-03 16:37:30,898] Trial 101 pruned. 
+[I 2024-04-03 16:37:30,959] Trial 102 pruned. 
+[I 2024-04-03 16:37:31,021] Trial 103 pruned. 
+[I 2024-04-03 16:37:31,083] Trial 104 pruned. 
+[I 2024-04-03 16:37:31,145] Trial 105 pruned. 
+[I 2024-04-03 16:37:31,209] Trial 106 pruned. 
+[I 2024-04-03 16:37:50,984] Trial 107 finished with value: 0.7898832684824902 and parameters: {'num_layers': 1, 'num_neurons': 90, 'dropout_rate': 0.10019802740695796, 'lr': 0.06306788404250481, 'optimizer': 'Adam', 'lr_decay': 0.9941856842505036}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:38:08,955] Trial 108 finished with value: 0.7898832684824902 and parameters: {'num_layers': 1, 'num_neurons': 40, 'dropout_rate': 0.13759184787581002, 'lr': 0.04305955786867485, 'optimizer': 'RMSprop', 'lr_decay': 0.996464054360039}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:38:09,017] Trial 109 pruned. 
+[I 2024-04-03 16:38:27,454] Trial 110 pruned. 
+[I 2024-04-03 16:38:47,406] Trial 111 finished with value: 0.8015564202334631 and parameters: {'num_layers': 1, 'num_neurons': 117, 'dropout_rate': 0.1820379738992909, 'lr': 0.03090190615194614, 'optimizer': 'Adam', 'lr_decay': 0.9992427174551345}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:38:47,468] Trial 112 pruned. 
+[I 2024-04-03 16:38:47,530] Trial 113 pruned. 
+[I 2024-04-03 16:38:47,593] Trial 114 pruned. 
+[I 2024-04-03 16:38:47,654] Trial 115 pruned. 
+[I 2024-04-03 16:38:47,716] Trial 116 pruned. 
+[I 2024-04-03 16:38:47,791] Trial 117 pruned. 
+[I 2024-04-03 16:38:47,853] Trial 118 pruned. 
+[I 2024-04-03 16:38:47,918] Trial 119 pruned. 
+[I 2024-04-03 16:39:07,904] Trial 120 finished with value: 0.7840466926070039 and parameters: {'num_layers': 1, 'num_neurons': 119, 'dropout_rate': 0.16556030378290224, 'lr': 0.0637252377153603, 'optimizer': 'Adam', 'lr_decay': 0.9999079063531648}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:39:27,855] Trial 121 finished with value: 0.7976653696498055 and parameters: {'num_layers': 1, 'num_neurons': 117, 'dropout_rate': 0.1688912292109262, 'lr': 0.02807534874499737, 'optimizer': 'Adam', 'lr_decay': 0.9992334689738444}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:39:47,614] Trial 122 finished with value: 0.791828793774319 and parameters: {'num_layers': 1, 'num_neurons': 99, 'dropout_rate': 0.14178379711509254, 'lr': 0.02888084525375807, 'optimizer': 'Adam', 'lr_decay': 0.9966612370285792}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:39:48,032] Trial 123 pruned. 
+[I 2024-04-03 16:40:07,876] Trial 124 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 133, 'dropout_rate': 0.12179025896636657, 'lr': 0.04184458541373265, 'optimizer': 'Adam', 'lr_decay': 0.9944652030011512}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:40:27,536] Trial 125 finished with value: 0.7898832684824902 and parameters: {'num_layers': 1, 'num_neurons': 80, 'dropout_rate': 0.15601094770563576, 'lr': 0.053380457835116184, 'optimizer': 'Adam', 'lr_decay': 0.9999896046646359}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:40:27,592] Trial 126 pruned. 
+[I 2024-04-03 16:40:27,654] Trial 127 pruned. 
+[I 2024-04-03 16:40:27,716] Trial 128 pruned. 
+[I 2024-04-03 16:40:45,528] Trial 129 finished with value: 0.7898832684824902 and parameters: {'num_layers': 1, 'num_neurons': 46, 'dropout_rate': 0.42640263140153783, 'lr': 0.0666561740033525, 'optimizer': 'RMSprop', 'lr_decay': 0.9968377666993026}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:40:45,591] Trial 130 pruned. 
+[I 2024-04-03 16:41:05,568] Trial 131 finished with value: 0.791828793774319 and parameters: {'num_layers': 1, 'num_neurons': 134, 'dropout_rate': 0.1212436564638178, 'lr': 0.042648735975428786, 'optimizer': 'Adam', 'lr_decay': 0.9941872708016398}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:41:06,710] Trial 132 pruned. 
+[I 2024-04-03 16:41:07,841] Trial 133 pruned. 
+[I 2024-04-03 16:41:08,974] Trial 134 pruned. 
+[I 2024-04-03 16:41:09,037] Trial 135 pruned. 
+[I 2024-04-03 16:41:29,015] Trial 136 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 130, 'dropout_rate': 0.16410983313158714, 'lr': 0.09902291604990336, 'optimizer': 'Adam', 'lr_decay': 0.9961229316695426}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:42:00,401] Trial 137 finished with value: 0.791828793774319 and parameters: {'num_layers': 3, 'num_neurons': 78, 'dropout_rate': 0.11053665665535119, 'lr': 0.07708363236190152, 'optimizer': 'Adam', 'lr_decay': 0.9975193138542848}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:42:00,464] Trial 138 pruned. 
+[I 2024-04-03 16:42:06,388] Trial 139 pruned. 
+[I 2024-04-03 16:42:26,455] Trial 140 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 138, 'dropout_rate': 0.13800406915508, 'lr': 0.035931374117843556, 'optimizer': 'Adam', 'lr_decay': 0.9993825907259611}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:42:46,473] Trial 141 finished with value: 0.7957198443579766 and parameters: {'num_layers': 1, 'num_neurons': 126, 'dropout_rate': 0.1595318902747002, 'lr': 0.09330317495034388, 'optimizer': 'Adam', 'lr_decay': 0.9962817399531313}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:42:46,537] Trial 142 pruned. 
+[I 2024-04-03 16:42:46,602] Trial 143 pruned. 
+[I 2024-04-03 16:43:06,885] Trial 144 finished with value: 0.7976653696498055 and parameters: {'num_layers': 1, 'num_neurons': 148, 'dropout_rate': 0.14779834580137943, 'lr': 0.07340957520272297, 'optimizer': 'Adam', 'lr_decay': 0.9982321866243923}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:43:06,949] Trial 145 pruned. 
+[I 2024-04-03 16:43:07,013] Trial 146 pruned. 
+[I 2024-04-03 16:43:07,076] Trial 147 pruned. 
+[I 2024-04-03 16:43:07,134] Trial 148 pruned. 
+[I 2024-04-03 16:43:07,197] Trial 149 pruned. 
+[I 2024-04-03 16:43:27,373] Trial 150 finished with value: 0.7996108949416343 and parameters: {'num_layers': 1, 'num_neurons': 178, 'dropout_rate': 0.10026228150647633, 'lr': 0.056564398715338644, 'optimizer': 'Adam', 'lr_decay': 0.9981461936346508}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:43:27,435] Trial 151 pruned. 
+[I 2024-04-03 16:43:27,499] Trial 152 pruned. 
+[I 2024-04-03 16:43:27,561] Trial 153 pruned. 
+[I 2024-04-03 16:43:27,625] Trial 154 pruned. 
+[I 2024-04-03 16:43:27,729] Trial 155 pruned. 
+[I 2024-04-03 16:43:27,792] Trial 156 pruned. 
+[I 2024-04-03 16:43:47,524] Trial 157 finished with value: 0.7957198443579766 and parameters: {'num_layers': 1, 'num_neurons': 115, 'dropout_rate': 0.11172502071810901, 'lr': 0.05680173861011479, 'optimizer': 'Adam', 'lr_decay': 0.995795036619234}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:43:47,586] Trial 158 pruned. 
+[I 2024-04-03 16:44:07,357] Trial 159 finished with value: 0.7996108949416343 and parameters: {'num_layers': 1, 'num_neurons': 128, 'dropout_rate': 0.1161094312705821, 'lr': 0.09975168411441339, 'optimizer': 'Adam', 'lr_decay': 0.9967827220404558}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:44:07,419] Trial 160 pruned. 
+[I 2024-04-03 16:44:27,150] Trial 161 finished with value: 0.7898832684824902 and parameters: {'num_layers': 1, 'num_neurons': 113, 'dropout_rate': 0.131768652781934, 'lr': 0.07307526304865336, 'optimizer': 'Adam', 'lr_decay': 0.9966946596750712}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:44:27,239] Trial 162 pruned. 
+[I 2024-04-03 16:44:47,323] Trial 163 finished with value: 0.7879377431906615 and parameters: {'num_layers': 1, 'num_neurons': 159, 'dropout_rate': 0.10086002653421636, 'lr': 0.09938468054481685, 'optimizer': 'Adam', 'lr_decay': 0.9973641089939326}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:44:47,387] Trial 164 pruned. 
+[I 2024-04-03 16:45:07,292] Trial 165 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 121, 'dropout_rate': 0.1583205365125735, 'lr': 0.08214720037550557, 'optimizer': 'Adam', 'lr_decay': 0.9982119308080346}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:45:07,355] Trial 166 pruned. 
+[I 2024-04-03 16:45:07,418] Trial 167 pruned. 
+[I 2024-04-03 16:45:07,482] Trial 168 pruned. 
+[I 2024-04-03 16:45:07,597] Trial 169 pruned. 
+[I 2024-04-03 16:45:07,660] Trial 170 pruned. 
+[I 2024-04-03 16:45:07,725] Trial 171 pruned. 
+[I 2024-04-03 16:45:07,789] Trial 172 pruned. 
+[I 2024-04-03 16:45:07,852] Trial 173 pruned. 
+[I 2024-04-03 16:45:07,916] Trial 174 pruned. 
+[I 2024-04-03 16:45:27,601] Trial 175 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 136, 'dropout_rate': 0.14412178850089588, 'lr': 0.05026300878573421, 'optimizer': 'Adam', 'lr_decay': 0.9959258028033354}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:45:27,665] Trial 176 pruned. 
+[I 2024-04-03 16:45:27,730] Trial 177 pruned. 
+[I 2024-04-03 16:45:27,794] Trial 178 pruned. 
+[I 2024-04-03 16:45:27,852] Trial 179 pruned. 
+[I 2024-04-03 16:45:27,915] Trial 180 pruned. 
+[I 2024-04-03 16:45:27,979] Trial 181 pruned. 
+[I 2024-04-03 16:45:47,752] Trial 182 finished with value: 0.7898832684824902 and parameters: {'num_layers': 1, 'num_neurons': 131, 'dropout_rate': 0.11880555408669531, 'lr': 0.036575730929409724, 'optimizer': 'Adam', 'lr_decay': 0.993387690347901}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:45:47,816] Trial 183 pruned. 
+[I 2024-04-03 16:45:47,880] Trial 184 pruned. 
+[I 2024-04-03 16:45:47,944] Trial 185 pruned. 
+[I 2024-04-03 16:46:07,553] Trial 186 finished with value: 0.791828793774319 and parameters: {'num_layers': 1, 'num_neurons': 105, 'dropout_rate': 0.34087325978014127, 'lr': 0.06554817088776117, 'optimizer': 'Adam', 'lr_decay': 0.9913378560420665}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:46:07,617] Trial 187 pruned. 
+[I 2024-04-03 16:46:25,638] Trial 188 finished with value: 0.7879377431906615 and parameters: {'num_layers': 1, 'num_neurons': 90, 'dropout_rate': 0.10047730627866708, 'lr': 0.08374418225504822, 'optimizer': 'RMSprop', 'lr_decay': 0.9975901218913692}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:46:25,703] Trial 189 pruned. 
+[I 2024-04-03 16:46:25,767] Trial 190 pruned. 
+[I 2024-04-03 16:46:25,831] Trial 191 pruned. 
+[I 2024-04-03 16:46:25,896] Trial 192 pruned. 
+[I 2024-04-03 16:46:45,659] Trial 193 finished with value: 0.7957198443579766 and parameters: {'num_layers': 1, 'num_neurons': 144, 'dropout_rate': 0.13134803900273342, 'lr': 0.061646824142275854, 'optimizer': 'Adam', 'lr_decay': 0.9962960015647}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:47:05,586] Trial 194 finished with value: 0.791828793774319 and parameters: {'num_layers': 1, 'num_neurons': 147, 'dropout_rate': 0.1307257243126321, 'lr': 0.05815519678199879, 'optimizer': 'Adam', 'lr_decay': 0.9999981063907123}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:47:05,650] Trial 195 pruned. 
+[I 2024-04-03 16:47:05,729] Trial 196 pruned. 
+[I 2024-04-03 16:47:05,793] Trial 197 pruned. 
+[I 2024-04-03 16:47:25,340] Trial 198 finished with value: 0.7879377431906615 and parameters: {'num_layers': 1, 'num_neurons': 95, 'dropout_rate': 0.12859633149367505, 'lr': 0.06646439091419576, 'optimizer': 'Adam', 'lr_decay': 0.9948588109864486}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:47:25,404] Trial 199 pruned. 
+[I 2024-04-03 16:47:25,468] Trial 200 pruned. 
+[I 2024-04-03 16:47:25,533] Trial 201 pruned. 
+[I 2024-04-03 16:47:25,597] Trial 202 pruned. 
+[I 2024-04-03 16:47:45,346] Trial 203 finished with value: 0.8015564202334631 and parameters: {'num_layers': 1, 'num_neurons': 124, 'dropout_rate': 0.1402458160160256, 'lr': 0.07385744859645901, 'optimizer': 'Adam', 'lr_decay': 0.9991999154189395}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:47:45,410] Trial 204 pruned. 
+[I 2024-04-03 16:47:45,475] Trial 205 pruned. 
+[I 2024-04-03 16:47:45,540] Trial 206 pruned. 
+[I 2024-04-03 16:48:05,205] Trial 207 finished with value: 0.791828793774319 and parameters: {'num_layers': 1, 'num_neurons': 111, 'dropout_rate': 0.12090779095443867, 'lr': 0.07756920181703669, 'optimizer': 'Adam', 'lr_decay': 0.9982188372407229}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:48:05,269] Trial 208 pruned. 
+[I 2024-04-03 16:48:05,333] Trial 209 pruned. 
+[I 2024-04-03 16:48:05,398] Trial 210 pruned. 
+[I 2024-04-03 16:48:05,463] Trial 211 pruned. 
+[I 2024-04-03 16:48:05,527] Trial 212 pruned. 
+[I 2024-04-03 16:48:05,592] Trial 213 pruned. 
+[I 2024-04-03 16:48:05,657] Trial 214 pruned. 
+[I 2024-04-03 16:48:27,358] Trial 215 finished with value: 0.7996108949416343 and parameters: {'num_layers': 1, 'num_neurons': 505, 'dropout_rate': 0.15379725537437064, 'lr': 0.05981205093081533, 'optimizer': 'Adam', 'lr_decay': 0.9976142340215447}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:48:27,419] Trial 216 pruned. 
+[I 2024-04-03 16:48:27,487] Trial 217 pruned. 
+[I 2024-04-03 16:48:27,552] Trial 218 pruned. 
+[I 2024-04-03 16:48:27,617] Trial 219 pruned. 
+[I 2024-04-03 16:48:27,685] Trial 220 pruned. 
+[I 2024-04-03 16:48:27,750] Trial 221 pruned. 
+[I 2024-04-03 16:48:27,819] Trial 222 pruned. 
+[I 2024-04-03 16:48:27,887] Trial 223 pruned. 
+[I 2024-04-03 16:48:28,023] Trial 224 pruned. 
+[I 2024-04-03 16:48:28,091] Trial 225 pruned. 
+[I 2024-04-03 16:48:28,154] Trial 226 pruned. 
+[I 2024-04-03 16:48:28,225] Trial 227 pruned. 
+[I 2024-04-03 16:48:28,291] Trial 228 pruned. 
+[I 2024-04-03 16:48:28,358] Trial 229 pruned. 
+[I 2024-04-03 16:48:28,423] Trial 230 pruned. 
+[I 2024-04-03 16:48:28,489] Trial 231 pruned. 
+[I 2024-04-03 16:48:28,556] Trial 232 pruned. 
+[I 2024-04-03 16:48:48,237] Trial 233 finished with value: 0.7976653696498055 and parameters: {'num_layers': 1, 'num_neurons': 123, 'dropout_rate': 0.10024910314416972, 'lr': 0.025481329371288806, 'optimizer': 'Adam', 'lr_decay': 0.9992501289800092}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:48:48,303] Trial 234 pruned. 
+[I 2024-04-03 16:48:48,368] Trial 235 pruned. 
+[I 2024-04-03 16:48:48,434] Trial 236 pruned. 
+[I 2024-04-03 16:48:48,501] Trial 237 pruned. 
+[I 2024-04-03 16:48:48,568] Trial 238 pruned. 
+[I 2024-04-03 16:48:48,635] Trial 239 pruned. 
+[I 2024-04-03 16:48:48,738] Trial 240 pruned. 
+[I 2024-04-03 16:48:48,804] Trial 241 pruned. 
+[I 2024-04-03 16:48:48,872] Trial 242 pruned. 
+[I 2024-04-03 16:48:48,939] Trial 243 pruned. 
+[I 2024-04-03 16:48:49,005] Trial 244 pruned. 
+[I 2024-04-03 16:48:49,073] Trial 245 pruned. 
+[I 2024-04-03 16:48:49,148] Trial 246 pruned. 
+[I 2024-04-03 16:48:49,214] Trial 247 pruned. 
+[I 2024-04-03 16:48:49,281] Trial 248 pruned. 
+[I 2024-04-03 16:48:49,373] Trial 249 pruned. 
+[I 2024-04-03 16:48:49,440] Trial 250 pruned. 
+[I 2024-04-03 16:48:49,507] Trial 251 pruned. 
+[I 2024-04-03 16:48:49,567] Trial 252 pruned. 
+[I 2024-04-03 16:48:49,634] Trial 253 pruned. 
+[I 2024-04-03 16:49:09,173] Trial 254 finished with value: 0.7898832684824902 and parameters: {'num_layers': 1, 'num_neurons': 102, 'dropout_rate': 0.141061154954044, 'lr': 0.04385606688612058, 'optimizer': 'Adam', 'lr_decay': 0.9922713199387306}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:49:09,240] Trial 255 pruned. 
+[I 2024-04-03 16:49:09,307] Trial 256 pruned. 
+[I 2024-04-03 16:49:09,374] Trial 257 pruned. 
+[I 2024-04-03 16:49:09,437] Trial 258 pruned. 
+[I 2024-04-03 16:49:29,064] Trial 259 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 114, 'dropout_rate': 0.13453940339469322, 'lr': 0.04667518116513072, 'optimizer': 'Adam', 'lr_decay': 0.9988087459019253}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:49:29,132] Trial 260 pruned. 
+[I 2024-04-03 16:49:48,915] Trial 261 finished with value: 0.7859922178988327 and parameters: {'num_layers': 1, 'num_neurons': 135, 'dropout_rate': 0.1641268261637881, 'lr': 0.08633824825104337, 'optimizer': 'Adam', 'lr_decay': 0.9763173721359885}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:49:48,994] Trial 262 pruned. 
+[I 2024-04-03 16:49:49,061] Trial 263 pruned. 
+[I 2024-04-03 16:50:08,638] Trial 264 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 105, 'dropout_rate': 0.12872373289319364, 'lr': 0.05221229581819274, 'optimizer': 'Adam', 'lr_decay': 0.997418912518507}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:50:08,706] Trial 265 pruned. 
+[I 2024-04-03 16:50:08,773] Trial 266 pruned. 
+[I 2024-04-03 16:50:08,839] Trial 267 pruned. 
+[I 2024-04-03 16:50:08,908] Trial 268 pruned. 
+[I 2024-04-03 16:50:08,975] Trial 269 pruned. 
+[I 2024-04-03 16:50:09,042] Trial 270 pruned. 
+[I 2024-04-03 16:50:09,108] Trial 271 pruned. 
+[I 2024-04-03 16:50:10,487] Trial 272 pruned. 
+[I 2024-04-03 16:50:10,548] Trial 273 pruned. 
+[I 2024-04-03 16:50:10,615] Trial 274 pruned. 
+[I 2024-04-03 16:50:30,347] Trial 275 finished with value: 0.791828793774319 and parameters: {'num_layers': 1, 'num_neurons': 133, 'dropout_rate': 0.20751572309040986, 'lr': 0.03000274803072548, 'optimizer': 'Adam', 'lr_decay': 0.9970885667133581}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:50:30,415] Trial 276 pruned. 
+[I 2024-04-03 16:50:30,487] Trial 277 pruned. 
+[I 2024-04-03 16:50:30,554] Trial 278 pruned. 
+[I 2024-04-03 16:50:30,622] Trial 279 pruned. 
+[I 2024-04-03 16:50:30,686] Trial 280 pruned. 
+[I 2024-04-03 16:50:50,056] Trial 281 finished with value: 0.7976653696498055 and parameters: {'num_layers': 1, 'num_neurons': 54, 'dropout_rate': 0.11216321222203819, 'lr': 0.058661390941265296, 'optimizer': 'Adam', 'lr_decay': 0.9991972645964853}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:51:09,332] Trial 282 finished with value: 0.8015564202334631 and parameters: {'num_layers': 1, 'num_neurons': 48, 'dropout_rate': 0.1116052062600508, 'lr': 0.05976165352516936, 'optimizer': 'Adam', 'lr_decay': 0.9978010071577479}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:51:28,607] Trial 283 finished with value: 0.791828793774319 and parameters: {'num_layers': 1, 'num_neurons': 44, 'dropout_rate': 0.10038828105241697, 'lr': 0.051554760290977074, 'optimizer': 'Adam', 'lr_decay': 0.9979363041959641}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:51:28,675] Trial 284 pruned. 
+[I 2024-04-03 16:51:28,742] Trial 285 pruned. 
+[I 2024-04-03 16:51:28,809] Trial 286 pruned. 
+[I 2024-04-03 16:51:48,102] Trial 287 finished with value: 0.791828793774319 and parameters: {'num_layers': 1, 'num_neurons': 41, 'dropout_rate': 0.11876527545712107, 'lr': 0.07269326868081415, 'optimizer': 'Adam', 'lr_decay': 0.999198022912065}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:52:07,461] Trial 288 finished with value: 0.791828793774319 and parameters: {'num_layers': 1, 'num_neurons': 57, 'dropout_rate': 0.11079609693631894, 'lr': 0.05017387308273407, 'optimizer': 'Adam', 'lr_decay': 0.996914893015633}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:52:26,924] Trial 289 finished with value: 0.7957198443579766 and parameters: {'num_layers': 1, 'num_neurons': 68, 'dropout_rate': 0.12361499217579497, 'lr': 0.056527209690160576, 'optimizer': 'Adam', 'lr_decay': 0.9999865907972915}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:52:26,992] Trial 290 pruned. 
+[I 2024-04-03 16:52:27,060] Trial 291 pruned. 
+[I 2024-04-03 16:52:46,422] Trial 292 finished with value: 0.8015564202334631 and parameters: {'num_layers': 1, 'num_neurons': 56, 'dropout_rate': 0.12183003930557161, 'lr': 0.07202514382648233, 'optimizer': 'Adam', 'lr_decay': 0.9979511311797017}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:53:05,751] Trial 293 finished with value: 0.7996108949416343 and parameters: {'num_layers': 1, 'num_neurons': 53, 'dropout_rate': 0.10003443554925012, 'lr': 0.0757942505271559, 'optimizer': 'Adam', 'lr_decay': 0.9979569736599354}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:53:05,818] Trial 294 pruned. 
+[I 2024-04-03 16:53:05,886] Trial 295 pruned. 
+[I 2024-04-03 16:53:05,963] Trial 296 pruned. 
+[I 2024-04-03 16:53:06,031] Trial 297 pruned. 
+[I 2024-04-03 16:53:06,093] Trial 298 pruned. 
+[I 2024-04-03 16:53:06,161] Trial 299 pruned. 
+[I 2024-04-03 16:53:06,230] Trial 300 pruned. 
+[I 2024-04-03 16:53:06,318] Trial 301 pruned. 
+[I 2024-04-03 16:53:25,641] Trial 302 finished with value: 0.791828793774319 and parameters: {'num_layers': 1, 'num_neurons': 54, 'dropout_rate': 0.12408075607119284, 'lr': 0.06867321245656807, 'optimizer': 'Adam', 'lr_decay': 0.9966484337618053}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:53:25,709] Trial 303 pruned. 
+[I 2024-04-03 16:53:25,774] Trial 304 pruned. 
+[I 2024-04-03 16:53:25,843] Trial 305 pruned. 
+[I 2024-04-03 16:53:25,910] Trial 306 pruned. 
+[I 2024-04-03 16:53:25,979] Trial 307 pruned. 
+[I 2024-04-03 16:53:26,047] Trial 308 pruned. 
+[I 2024-04-03 16:53:45,352] Trial 309 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 44, 'dropout_rate': 0.14186885846987726, 'lr': 0.06068195497676061, 'optimizer': 'Adam', 'lr_decay': 0.9987086021190162}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:53:45,424] Trial 310 pruned. 
+[I 2024-04-03 16:53:45,495] Trial 311 pruned. 
+[I 2024-04-03 16:53:45,563] Trial 312 pruned. 
+[I 2024-04-03 16:53:45,632] Trial 313 pruned. 
+[I 2024-04-03 16:53:45,705] Trial 314 pruned. 
+[I 2024-04-03 16:53:46,824] Trial 315 pruned. 
+[I 2024-04-03 16:53:47,807] Trial 316 pruned. 
+[I 2024-04-03 16:53:47,876] Trial 317 pruned. 
+[I 2024-04-03 16:53:47,947] Trial 318 pruned. 
+[I 2024-04-03 16:53:48,015] Trial 319 pruned. 
+[I 2024-04-03 16:53:48,078] Trial 320 pruned. 
+[I 2024-04-03 16:53:48,148] Trial 321 pruned. 
+[I 2024-04-03 16:53:48,218] Trial 322 pruned. 
+[I 2024-04-03 16:53:48,287] Trial 323 pruned. 
+[I 2024-04-03 16:53:48,415] Trial 324 pruned. 
+[I 2024-04-03 16:54:07,833] Trial 325 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 61, 'dropout_rate': 0.1570595767265561, 'lr': 0.09853924934088829, 'optimizer': 'Adam', 'lr_decay': 0.9991558509727705}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:54:07,912] Trial 326 pruned. 
+[I 2024-04-03 16:54:07,979] Trial 327 pruned. 
+[I 2024-04-03 16:54:27,610] Trial 328 finished with value: 0.7898832684824902 and parameters: {'num_layers': 1, 'num_neurons': 104, 'dropout_rate': 0.1383641966510233, 'lr': 0.04115347362293729, 'optimizer': 'Adam', 'lr_decay': 0.9962868939941496}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:54:27,746] Trial 329 pruned. 
+[I 2024-04-03 16:54:27,839] Trial 330 pruned. 
+[I 2024-04-03 16:54:31,134] Trial 331 pruned. 
+[I 2024-04-03 16:54:31,204] Trial 332 pruned. 
+[I 2024-04-03 16:54:31,273] Trial 333 pruned. 
+[I 2024-04-03 16:54:31,343] Trial 334 pruned. 
+[I 2024-04-03 16:54:31,413] Trial 335 pruned. 
+[I 2024-04-03 16:54:31,483] Trial 336 pruned. 
+[I 2024-04-03 16:54:32,469] Trial 337 pruned. 
+[I 2024-04-03 16:54:32,538] Trial 338 pruned. 
+[I 2024-04-03 16:54:32,608] Trial 339 pruned. 
+[I 2024-04-03 16:54:32,680] Trial 340 pruned. 
+[I 2024-04-03 16:54:32,750] Trial 341 pruned. 
+[I 2024-04-03 16:54:32,820] Trial 342 pruned. 
+[I 2024-04-03 16:54:32,891] Trial 343 pruned. 
+[I 2024-04-03 16:54:32,970] Trial 344 pruned. 
+[I 2024-04-03 16:54:33,042] Trial 345 pruned. 
+[I 2024-04-03 16:54:33,112] Trial 346 pruned. 
+[I 2024-04-03 16:54:33,182] Trial 347 pruned. 
+[I 2024-04-03 16:54:52,866] Trial 348 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 109, 'dropout_rate': 0.12543528551975885, 'lr': 0.05387366851298007, 'optimizer': 'Adam', 'lr_decay': 0.997169685132223}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:54:52,933] Trial 349 pruned. 
+[I 2024-04-03 16:55:12,881] Trial 350 finished with value: 0.7898832684824902 and parameters: {'num_layers': 1, 'num_neurons': 125, 'dropout_rate': 0.10953590735547053, 'lr': 0.0998720586992459, 'optimizer': 'Adam', 'lr_decay': 0.9962551429566636}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:55:12,953] Trial 351 pruned. 
+[I 2024-04-03 16:55:32,899] Trial 352 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 153, 'dropout_rate': 0.12987724507752443, 'lr': 0.07016724246335888, 'optimizer': 'Adam', 'lr_decay': 0.9990734534750806}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:55:32,970] Trial 353 pruned. 
+[I 2024-04-03 16:55:33,040] Trial 354 pruned. 
+[I 2024-04-03 16:55:33,113] Trial 355 pruned. 
+[I 2024-04-03 16:55:33,184] Trial 356 pruned. 
+[I 2024-04-03 16:55:52,553] Trial 357 finished with value: 0.7859922178988327 and parameters: {'num_layers': 1, 'num_neurons': 53, 'dropout_rate': 0.14675357315508658, 'lr': 0.046243090337320575, 'optimizer': 'Adam', 'lr_decay': 0.9945454326464268}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:55:52,624] Trial 358 pruned. 
+[I 2024-04-03 16:55:52,696] Trial 359 pruned. 
+[I 2024-04-03 16:55:52,766] Trial 360 pruned. 
+[I 2024-04-03 16:55:52,837] Trial 361 pruned. 
+[I 2024-04-03 16:55:52,908] Trial 362 pruned. 
+[I 2024-04-03 16:55:53,011] Trial 363 pruned. 
+[I 2024-04-03 16:55:53,083] Trial 364 pruned. 
+[I 2024-04-03 16:55:53,152] Trial 365 pruned. 
+[I 2024-04-03 16:55:53,223] Trial 366 pruned. 
+[I 2024-04-03 16:55:53,314] Trial 367 pruned. 
+[I 2024-04-03 16:56:13,203] Trial 368 finished with value: 0.7821011673151751 and parameters: {'num_layers': 1, 'num_neurons': 147, 'dropout_rate': 0.1766025436467465, 'lr': 0.07165020087853108, 'optimizer': 'Adam', 'lr_decay': 0.9708673145632557}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:56:13,274] Trial 369 pruned. 
+[I 2024-04-03 16:56:13,345] Trial 370 pruned. 
+[I 2024-04-03 16:56:13,412] Trial 371 pruned. 
+[I 2024-04-03 16:56:13,483] Trial 372 pruned. 
+[I 2024-04-03 16:56:13,557] Trial 373 pruned. 
+[I 2024-04-03 16:56:13,628] Trial 374 pruned. 
+[I 2024-04-03 16:56:13,700] Trial 375 pruned. 
+[I 2024-04-03 16:56:33,480] Trial 376 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 121, 'dropout_rate': 0.19380564013648807, 'lr': 0.06390684501987964, 'optimizer': 'Adam', 'lr_decay': 0.9963776640263462}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:56:33,550] Trial 377 pruned. 
+[I 2024-04-03 16:56:33,623] Trial 378 pruned. 
+[I 2024-04-03 16:56:53,294] Trial 379 finished with value: 0.7879377431906615 and parameters: {'num_layers': 1, 'num_neurons': 101, 'dropout_rate': 0.11352949392673234, 'lr': 0.08584483627323296, 'optimizer': 'Adam', 'lr_decay': 0.995397185471048}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:56:53,366] Trial 380 pruned. 
+[I 2024-04-03 16:56:53,439] Trial 381 pruned. 
+[I 2024-04-03 16:56:53,510] Trial 382 pruned. 
+[I 2024-04-03 16:56:53,592] Trial 383 pruned. 
+[I 2024-04-03 16:56:53,664] Trial 384 pruned. 
+[I 2024-04-03 16:57:13,522] Trial 385 finished with value: 0.7898832684824902 and parameters: {'num_layers': 1, 'num_neurons': 110, 'dropout_rate': 0.10024365294718081, 'lr': 0.07584983154919435, 'optimizer': 'Adam', 'lr_decay': 0.9999548683702157}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:57:13,594] Trial 386 pruned. 
+[I 2024-04-03 16:57:13,666] Trial 387 pruned. 
+[I 2024-04-03 16:57:13,731] Trial 388 pruned. 
+[I 2024-04-03 16:57:13,814] Trial 389 pruned. 
+[I 2024-04-03 16:57:33,676] Trial 390 finished with value: 0.7879377431906615 and parameters: {'num_layers': 1, 'num_neurons': 142, 'dropout_rate': 0.11793006617142315, 'lr': 0.0481947666266257, 'optimizer': 'Adam', 'lr_decay': 0.995277736315611}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:57:33,748] Trial 391 pruned. 
+[I 2024-04-03 16:57:33,821] Trial 392 pruned. 
+[I 2024-04-03 16:57:33,889] Trial 393 pruned. 
+[I 2024-04-03 16:57:33,960] Trial 394 pruned. 
+[I 2024-04-03 16:57:34,032] Trial 395 pruned. 
+[I 2024-04-03 16:57:34,104] Trial 396 pruned. 
+[I 2024-04-03 16:57:34,175] Trial 397 pruned. 
+[I 2024-04-03 16:57:34,247] Trial 398 pruned. 
+[I 2024-04-03 16:57:34,324] Trial 399 pruned. 
+[I 2024-04-03 16:57:34,396] Trial 400 pruned. 
+[I 2024-04-03 16:57:34,468] Trial 401 pruned. 
+[I 2024-04-03 16:57:34,540] Trial 402 pruned. 
+[I 2024-04-03 16:57:34,613] Trial 403 pruned. 
+[I 2024-04-03 16:57:34,685] Trial 404 pruned. 
+[I 2024-04-03 16:57:34,757] Trial 405 pruned. 
+[I 2024-04-03 16:57:34,829] Trial 406 pruned. 
+[I 2024-04-03 16:57:34,902] Trial 407 pruned. 
+[I 2024-04-03 16:57:34,977] Trial 408 pruned. 
+[I 2024-04-03 16:57:35,087] Trial 409 pruned. 
+[I 2024-04-03 16:57:35,155] Trial 410 pruned. 
+[I 2024-04-03 16:57:35,227] Trial 411 pruned. 
+[I 2024-04-03 16:57:35,299] Trial 412 pruned. 
+[I 2024-04-03 16:57:35,372] Trial 413 pruned. 
+[I 2024-04-03 16:57:54,938] Trial 414 finished with value: 0.7957198443579766 and parameters: {'num_layers': 1, 'num_neurons': 82, 'dropout_rate': 0.1317828381969744, 'lr': 0.07215824096095554, 'optimizer': 'Adam', 'lr_decay': 0.9940657623201583}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:57:55,012] Trial 415 pruned. 
+[I 2024-04-03 16:57:55,081] Trial 416 pruned. 
+[I 2024-04-03 16:58:14,766] Trial 417 finished with value: 0.791828793774319 and parameters: {'num_layers': 1, 'num_neurons': 79, 'dropout_rate': 0.14758672549315, 'lr': 0.06763432548669344, 'optimizer': 'Adam', 'lr_decay': 0.9991739964438612}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:58:14,863] Trial 418 pruned. 
+[I 2024-04-03 16:58:14,935] Trial 419 pruned. 
+[I 2024-04-03 16:58:15,009] Trial 420 pruned. 
+[I 2024-04-03 16:58:15,082] Trial 421 pruned. 
+[I 2024-04-03 16:58:15,168] Trial 422 pruned. 
+[I 2024-04-03 16:58:15,241] Trial 423 pruned. 
+[I 2024-04-03 16:58:15,315] Trial 424 pruned. 
+[I 2024-04-03 16:58:34,771] Trial 425 finished with value: 0.7957198443579766 and parameters: {'num_layers': 1, 'num_neurons': 67, 'dropout_rate': 0.11046199990051873, 'lr': 0.06204428811370553, 'optimizer': 'Adam', 'lr_decay': 0.9986579909502504}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:58:34,844] Trial 426 pruned. 
+[I 2024-04-03 16:58:34,917] Trial 427 pruned. 
+[I 2024-04-03 16:58:34,989] Trial 428 pruned. 
+[I 2024-04-03 16:58:35,063] Trial 429 pruned. 
+[I 2024-04-03 16:58:35,136] Trial 430 pruned. 
+[I 2024-04-03 16:58:35,209] Trial 431 pruned. 
+[I 2024-04-03 16:58:35,330] Trial 432 pruned. 
+[I 2024-04-03 16:58:35,398] Trial 433 pruned. 
+[I 2024-04-03 16:58:35,471] Trial 434 pruned. 
+[I 2024-04-03 16:58:35,544] Trial 435 pruned. 
+[I 2024-04-03 16:58:55,139] Trial 436 finished with value: 0.7957198443579766 and parameters: {'num_layers': 1, 'num_neurons': 79, 'dropout_rate': 0.1211965895549817, 'lr': 0.04938877979450226, 'optimizer': 'Adam', 'lr_decay': 0.9991339512598578}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:58:55,212] Trial 437 pruned. 
+[I 2024-04-03 16:58:55,287] Trial 438 pruned. 
+[I 2024-04-03 16:58:55,360] Trial 439 pruned. 
+[I 2024-04-03 16:59:13,637] Trial 440 finished with value: 0.7996108949416343 and parameters: {'num_layers': 1, 'num_neurons': 141, 'dropout_rate': 0.11165039006252264, 'lr': 0.035553168678354376, 'optimizer': 'RMSprop', 'lr_decay': 0.9999274890424938}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:59:13,707] Trial 441 pruned. 
+[I 2024-04-03 16:59:13,782] Trial 442 pruned. 
+[I 2024-04-03 16:59:13,853] Trial 443 pruned. 
+[I 2024-04-03 16:59:13,924] Trial 444 pruned. 
+[I 2024-04-03 16:59:13,996] Trial 445 pruned. 
+[I 2024-04-03 16:59:32,438] Trial 446 finished with value: 0.7898832684824902 and parameters: {'num_layers': 1, 'num_neurons': 171, 'dropout_rate': 0.11790241266500741, 'lr': 0.06396582578025557, 'optimizer': 'RMSprop', 'lr_decay': 0.9979535394530294}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:59:32,511] Trial 447 pruned. 
+[I 2024-04-03 16:59:32,582] Trial 448 pruned. 
+[I 2024-04-03 16:59:32,654] Trial 449 pruned. 
+[I 2024-04-03 16:59:50,934] Trial 450 finished with value: 0.8015564202334631 and parameters: {'num_layers': 1, 'num_neurons': 134, 'dropout_rate': 0.1110362421224411, 'lr': 0.064399833613929, 'optimizer': 'RMSprop', 'lr_decay': 0.9988670386333555}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 16:59:51,007] Trial 451 pruned. 
+[I 2024-04-03 16:59:51,079] Trial 452 pruned. 
+[I 2024-04-03 16:59:51,149] Trial 453 pruned. 
+[I 2024-04-03 16:59:51,221] Trial 454 pruned. 
+[I 2024-04-03 16:59:51,303] Trial 455 pruned. 
+[I 2024-04-03 16:59:51,374] Trial 456 pruned. 
+[I 2024-04-03 16:59:51,444] Trial 457 pruned. 
+[I 2024-04-03 16:59:51,515] Trial 458 pruned. 
+[I 2024-04-03 16:59:51,587] Trial 459 pruned. 
+[I 2024-04-03 16:59:51,658] Trial 460 pruned. 
+[I 2024-04-03 16:59:51,727] Trial 461 pruned. 
+[I 2024-04-03 16:59:51,801] Trial 462 pruned. 
+[I 2024-04-03 16:59:51,876] Trial 463 pruned. 
+[I 2024-04-03 17:00:11,769] Trial 464 finished with value: 0.7957198443579766 and parameters: {'num_layers': 1, 'num_neurons': 115, 'dropout_rate': 0.10055760816787326, 'lr': 0.07132024499970092, 'optimizer': 'Adam', 'lr_decay': 0.9989547932000081}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 17:00:31,229] Trial 465 pruned. 
+[I 2024-04-03 17:00:31,305] Trial 466 pruned. 
+[I 2024-04-03 17:00:31,380] Trial 467 pruned. 
+[I 2024-04-03 17:00:31,455] Trial 468 pruned. 
+[I 2024-04-03 17:00:31,567] Trial 469 pruned. 
+[I 2024-04-03 17:00:31,642] Trial 470 pruned. 
+[I 2024-04-03 17:00:31,717] Trial 471 pruned. 
+[I 2024-04-03 17:00:31,791] Trial 472 pruned. 
+[I 2024-04-03 17:00:49,657] Trial 473 pruned. 
+[I 2024-04-03 17:00:49,732] Trial 474 pruned. 
+[I 2024-04-03 17:00:49,807] Trial 475 pruned. 
+[I 2024-04-03 17:00:49,892] Trial 476 pruned. 
+[I 2024-04-03 17:00:49,969] Trial 477 pruned. 
+[I 2024-04-03 17:00:50,043] Trial 478 pruned. 
+[I 2024-04-03 17:00:50,112] Trial 479 pruned. 
+[I 2024-04-03 17:00:50,188] Trial 480 pruned. 
+[I 2024-04-03 17:00:50,265] Trial 481 pruned. 
+[I 2024-04-03 17:00:50,340] Trial 482 pruned. 
+[I 2024-04-03 17:01:12,023] Trial 483 finished with value: 0.7879377431906615 and parameters: {'num_layers': 1, 'num_neurons': 427, 'dropout_rate': 0.1306146434474123, 'lr': 0.06159555320757241, 'optimizer': 'Adam', 'lr_decay': 0.9999980295040984}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 17:01:12,097] Trial 484 pruned. 
+[I 2024-04-03 17:01:12,173] Trial 485 pruned. 
+[I 2024-04-03 17:01:12,247] Trial 486 pruned. 
+[I 2024-04-03 17:01:31,923] Trial 487 finished with value: 0.7937743190661478 and parameters: {'num_layers': 1, 'num_neurons': 123, 'dropout_rate': 0.11022095363805451, 'lr': 0.035938835689777376, 'optimizer': 'Adam', 'lr_decay': 0.9957766373575193}. Best is trial 44 with value: 0.8035019455252919.
+[I 2024-04-03 17:01:31,997] Trial 488 pruned. 
+[I 2024-04-03 17:01:32,073] Trial 489 pruned. 
+[I 2024-04-03 17:01:32,149] Trial 490 pruned. 
+[I 2024-04-03 17:01:32,228] Trial 491 pruned. 
+[I 2024-04-03 17:01:32,300] Trial 492 pruned. 
+[I 2024-04-03 17:01:32,375] Trial 493 pruned. 
+[I 2024-04-03 17:01:32,461] Trial 494 pruned. 
+[I 2024-04-03 17:01:32,536] Trial 495 pruned. 
+[I 2024-04-03 17:01:32,611] Trial 496 pruned. 
+[I 2024-04-03 17:01:32,688] Trial 497 pruned. 
+[I 2024-04-03 17:01:32,764] Trial 498 pruned. 
+[I 2024-04-03 17:01:32,839] Trial 499 pruned. 
+Best parameters:  {'num_layers': 1, 'num_neurons': 87, 'dropout_rate': 0.1216806310066756, 'lr': 0.0639045325287511, 'optimizer': 'Adam', 'lr_decay': 0.9997202169755388}
+Best accuracy:  0.8035019455252919
+Model saved to '/lyceum/jhj1g23/Deep-Learning-Learning/uav_data/WildFires/best_model.pth'
+==============================================================================
+Running epilogue script on rose07.
+
+Submit time  : 2024-04-03T16:22:46
+Start time   : 2024-04-03T16:22:46
+End time     : 2024-04-03T17:02:19
+Elapsed time : 00:39:33 (Timelimit=03:00:00)
+
+Job ID: 5768415
+Cluster: i5
+User/Group: jhj1g23/fp
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 48
+CPU Utilized: 1-06:38:39
+CPU Efficiency: 96.85% of 1-07:38:24 core-walltime
+Job Wall-clock time: 00:39:33
+Memory Utilized: 448.81 MB
+Memory Efficiency: 0.00% of 16.00 B
+

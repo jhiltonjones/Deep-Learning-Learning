@@ -1,0 +1,38 @@
+Running SLURM prolog script on rose07.cluster.local
+===============================================================================
+Job started on Tue Apr  2 20:39:24 BST 2024
+Job ID          : 5764288
+Job name        : lauch.sh
+WorkDir         : /mainfs/lyceum/jhj1g23/Deep-Learning-Learning/uavsvm
+Command         : /mainfs/lyceum/jhj1g23/Deep-Learning-Learning/uavsvm/lauch.sh
+Partition       : a100
+Num hosts       : 1
+Num cores       : 48
+Num of tasks    : 1
+Hosts allocated : rose07
+Job Output Follows ...
+===============================================================================
+Traceback (most recent call last):
+  File "/mainfs/lyceum/jhj1g23/Deep-Learning-Learning/uavsvm/SVM.py", line 4, in <module>
+    from sklearn.model_selection import train_test_split, GridSearchCV, StratifiedShuffleSplit
+ModuleNotFoundError: No module named 'sklearn'
+==============================================================================
+Running epilogue script on rose07.
+
+Submit time  : 2024-04-02T20:39:24
+Start time   : 2024-04-02T20:39:24
+End time     : 2024-04-02T20:39:25
+Elapsed time : 00:00:01 (Timelimit=03:00:00)
+
+Job ID: 5764288
+Cluster: i5
+User/Group: jhj1g23/fp
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 48
+CPU Utilized: 00:00:06
+CPU Efficiency: 12.50% of 00:00:48 core-walltime
+Job Wall-clock time: 00:00:01
+Memory Utilized: 2.51 MB
+Memory Efficiency: 0.00% of 16.00 B
+
