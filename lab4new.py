@@ -61,7 +61,7 @@ for layer_size in hidden_layers:
     epoch_accuracies[layer_size] = [(h['training_acc'], h['val_acc']) for h in history]
 
 # Directory to save the figures
-save_dir = "/path/to/save/results"
+save_dir = "/lyceum/jhj1g23/Deep-Learning-Learning/lab4/results"
 if not os.path.exists(save_dir):
     os.makedirs(save_dir)
 
