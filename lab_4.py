@@ -91,6 +91,7 @@ overfitted = []
 train_acc5 =[]
 test_acc5 = []
 stopped_layers = []
+epoch_losses = {size: [] for size in hidden_layers}
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 for layer_size in hidden_layers:
@@ -105,6 +106,8 @@ for layer_size in hidden_layers:
   trial.with_generators(trainloader, test_generator=testloader)
 
   history = trial.run(epochs=100, verbose=0)
+  epoch_losses[layer_size] = [h['loss'] for h in history]
+
   if early_stopping.early_stop:
         stopped_layers.extend(early_stopping.stopped_layers)
    
@@ -161,3 +164,13 @@ plt.legend()
 plt.savefig('/lyceum/jhj1g23/Deep-Learning-Learning/lab4/results/train_accuracy_and_test_acccuracy')
 plt.show()
 print("Training stopped early for layers:", stopped_layers)
+
+plt.figure(figsize=(10, 8))
+
+for size, losses in epoch_losses.items():
+    plt.plot(losses, label=f'{size} units')
+plt.xlabel('Epochs')
+plt.ylabel('Loss')
+plt.title('Epoch vs Loss for Different Layer Sizes')
+plt.legend()
+plt.show()
