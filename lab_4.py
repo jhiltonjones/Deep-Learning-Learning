@@ -68,8 +68,16 @@ for layer_size in hidden_layers:
     epoch_losses[layer_size] = [h['loss'] for h in history]
     epoch_accuracies[layer_size] = [h['acc'] for h in history]
 
+import matplotlib.pyplot as plt
+import os
 
-# Plotting
+# Directory to save the figures
+save_dir = "/lyceum/jhj1g23/Deep-Learning-Learning/lab4/results"
+
+if not os.path.exists(save_dir):
+    os.makedirs(save_dir)  # Create the directory if it doesn't exist
+
+# Plotting and saving loss figures
 plt.figure(figsize=(12, 8))
 for layer_size, losses in epoch_losses.items():
     plt.plot(losses, label=f'{layer_size} units')
@@ -77,8 +85,11 @@ plt.xlabel('Epochs')
 plt.ylabel('Loss')
 plt.title('Loss vs. Epochs for Various Layer Sizes')
 plt.legend(title='Layer Size')
-plt.show()
+loss_fig_path = os.path.join(save_dir, 'loss_vs_epochs.png')
+plt.savefig(loss_fig_path)  # Save the figure
+plt.close()  # Close the plot to free memory
 
+# Plotting and saving accuracy figures
 plt.figure(figsize=(12, 8))
 for layer_size, accuracies in epoch_accuracies.items():
     plt.plot(accuracies, label=f'{layer_size} units')
@@ -86,4 +97,18 @@ plt.xlabel('Epochs')
 plt.ylabel('Accuracy')
 plt.title('Accuracy vs. Epochs for Various Layer Sizes')
 plt.legend(title='Layer Size')
-plt.show()
+acc_fig_path = os.path.join(save_dir, 'accuracy_vs_epochs.png')
+plt.savefig(acc_fig_path)  # Save the figure
+plt.close()  # Close the plot to free memory
+
+# Printing losses and accuracies for each layer size for each epoch
+for layer_size in hidden_layers:
+    print(f"Layer Size: {layer_size}")
+    print("Epoch-wise Losses:")
+    for epoch, loss in enumerate(epoch_losses[layer_size]):
+        print(f"Epoch {epoch + 1}: Loss = {loss}")
+    print("Epoch-wise Accuracies:")
+    for epoch, acc in enumerate(epoch_accuracies[layer_size]):
+        print(f"Epoch {epoch + 1}: Accuracy = {acc}")
+    print("\n")  # Newline for better separation
+
