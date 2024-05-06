@@ -5,33 +5,40 @@ from torch import nn
 from torch import optim
 import matplotlib.pyplot as plt
 import torchbearer
-from torch.utils.data import DataLoader
-from torchvision.datasets import MNIST
+from torch.utils.data import DataLoader, TensorDataset
+import mnist
+from torchbearer.metrics import TopKCategoricalAccuracy
 from torchbearer import Trial
-import os
-
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+import numpy
+from torchbearer import Callback
+seed = 1
 # fix random seed for reproducibility
-seed = 7
 torch.manual_seed(seed)
 torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 import numpy as np
 np.random.seed(seed)
-
 # flatten 28*28 images to a 784 vector for each image
 transform = transforms.Compose([
     transforms.ToTensor(),  # convert to tensor
     transforms.Lambda(lambda x: x.view(-1))  # flatten into vector
 ])
+x_train, t_train, x_test, t_test = mnist.load()
 
-# load data
-trainset = MNIST(".", train=True, download=True, transform=transform)
-testset = MNIST(".", train=False, download=True, transform=transform)
+# Convert the numpy arrays to PyTorch tensors
+x_train = torch.tensor(x_train, dtype=torch.float)
+t_train = torch.tensor(t_train, dtype=torch.long)
+x_test = torch.tensor(x_test, dtype=torch.float)
+t_test = torch.tensor(t_test, dtype=torch.long)
 
-# create data loaders
-trainloader = DataLoader(trainset, batch_size=128, shuffle=True)
-testloader = DataLoader(testset, batch_size=128, shuffle=True)
+# Create TensorDataset objects
+train_dataset = TensorDataset(x_train, t_train)
+test_dataset = TensorDataset(x_test, t_test)
+
+# Create DataLoader objects
+trainloader = DataLoader(train_dataset, batch_size=128, shuffle=True)
+testloader = DataLoader(test_dataset, batch_size=128, shuffle=False)
+
 # define baseline model
 class BaselineModel(nn.Module):
     def __init__(self, input_size, hidden_size, num_classes):
@@ -45,76 +52,112 @@ class BaselineModel(nn.Module):
         out = self.fc2(out)
         return out
 
-hidden_layers = [50]
+class EarlyStopping(Callback):
+    def __init__(self, patience=5, delta=0, layer_size=None):
+        super(EarlyStopping, self).__init__()
+        self.patience = patience
+        self.delta = delta
+        self.best_loss = None
+        self.counter = 0
+        self.early_stop = False
+        self.layer_size = layer_size
+        self.stopped_layers = []
+
+    def on_end_epoch(self, state):
+        # Use the validation loss as the metric to monitor
+        val_loss = state['val_loss'] if 'val_loss' in state else None
+
+        if val_loss is None:
+            return  # Skip if validation loss is not available
+
+        if self.best_loss is None:
+            self.best_loss = val_loss
+        elif val_loss < self.best_loss - self.delta:
+            self.best_loss = val_loss
+            self.counter = 0
+        else:
+            self.counter += 1
+            if self.counter >= self.patience:
+                self.early_stop = True
+                state[torchbearer.STOP_TRAINING] = True
+                self.stopped_layers.append(self.layer_size)
+
+hidden_layers = [50, 500, 1000, 10000, 50000, 100000, 150000, 200000, 250000, 300000, 350000]
 test_acc = []
 train_acc = []
 train_loss = []
 test_loss = []
-test_loss_list = []
-val_loss_list = []  
+overfitted = []
+train_acc5 =[]
+test_acc5 = []
+stopped_layers = []
 
+device = "cuda" if torch.cuda.is_available() else "cpu"
 for layer_size in hidden_layers:
-    print(f"Training with {layer_size} hidden units")
-    model = BaselineModel(784, layer_size, 10).to(device)
-    loss_fn = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters())
-    trial = Trial(model, optimizer, loss_fn, metrics=['accuracy', 'loss']).to(device)
-    trial.with_generators(trainloader, val_generator=testloader)
-    history = trial.run(epochs=1, verbose=0)
+  print(f'Layer size: {layer_size}')
+  model = BaselineModel(784, layer_size, 10).to(device)
+  model.to(device)
+  loss = nn.CrossEntropyLoss()
+  optimiser = optim.SGD(model.parameters(), lr=0.01)
+  metrics = ['accuracy', 'loss', TopKCategoricalAccuracy(k=5)]
+  early_stopping = EarlyStopping(patience=5, delta=0.01, layer_size=layer_size)
+  trial = Trial(model, optimiser, loss, metrics=metrics, callbacks=[early_stopping]).to(device)
+  trial.with_generators(trainloader, test_generator=testloader)
 
-    # Extract validation loss from the history object
-    val_loss = history[-1]['val_loss']
+  history = trial.run(epochs=100, verbose=0)
+  if early_stopping.early_stop:
+        stopped_layers.extend(early_stopping.stopped_layers)
+   
+  
+  
+  final_train_acc = history[-1]['acc']
+  train_acc.append(final_train_acc)
 
-    # Manually compute accuracy and loss on test set
-    model.eval()
-    total = 0
-    correct = 0
-    test_loss = 0
+  final_train_loss = history[-1]['loss']
+  train_loss.append(final_train_loss)
 
-    with torch.no_grad():
-        for data, target in testloader:
-            data, target = data.to(device), target.to(device)
-            outputs = model(data)
-            test_loss += loss_fn(outputs, target).item()
-            _, predicted = torch.max(outputs.data, 1)
-            total += target.size(0)
-            correct += (predicted == target).sum().item()
+  """final_train_acc5 = history[-1]['top_5_acc']
+  train_acc5.append(final_train_acc5)"""
 
-    test_accuracy = correct / total
-    test_loss /= len(testloader)
+  test_results = trial.evaluate(data_key=torchbearer.TEST_DATA)
+  test_accuracy = test_results['test_acc']
+  test_acc.append(test_accuracy)
 
-    # Append the results to your lists
-    train_acc.append(history[-1]['acc'])
-    train_loss.append(history[-1]['loss'])
-    test_acc.append(test_accuracy)
-    test_loss_list.append(test_loss)
-    val_loss_list.append(val_loss)  # Append validation loss
+  test_accuracy3 = test_results['test_loss']
+  test_loss.append(test_accuracy3)
+
+"""test_accuracy2 = test_results['test_top_5_acc']
+  test_acc5.append(test_accuracy2)"""
 
 
-# Plotting section
-results_dir = 'lab4/results'
-if not os.path.exists(results_dir):
-    os.makedirs(results_dir)
 
-# Plot for loss
+"""plt.figure()
+plt.plot(hidden_layers, train_acc5, label = 'Train Top 5 Accuracy')
+plt.plot(hidden_layers, test_acc5, label = 'Test Top 5 Accuracy')
+plt.xlabel("NUmber of Hidden Units")
+plt.ylabel("Top 5 Loss")
+plt.title("Comparison between the Train Top 5 Loss and the Test Top 5 Loss")
+plt.legend()
+plt.savefig('/Users/jackhilton-jones/Deep_Learning/21')
+plt.show()"""
+
 plt.figure()
-plt.plot(hidden_layers, train_loss, label='Train Loss')
-plt.plot(hidden_layers, val_loss_list, label='Validation Loss')  # Added validation loss
-plt.plot(hidden_layers, test_loss_list, label='Test Loss')  # use test_loss_list here
+plt.plot(hidden_layers, train_loss, label = 'Train Loss')
+plt.plot(hidden_layers, test_loss, label ='Test Loss')
 plt.xlabel("Number of Hidden Units")
 plt.ylabel("Loss")
-plt.title("Comparison of Hidden Layers to Train, Validation, and Test Loss")
+plt.title("Comparison between the Quantity of Hidden Layers to Train Loss and Test Loss")
 plt.legend()
-plt.savefig(os.path.join(results_dir, 'figure1.png'))
+plt.savefig('/lyceum/jhj1g23/Deep-Learning-Learning/lab4/results/train_loss_and_test_loss')
 plt.show()
 
-# Plot for accuracy
 plt.figure()
-plt.plot(hidden_layers, train_acc, label='Train Accuracy')
-plt.plot(hidden_layers, test_acc, label='Test Accuracy')
+plt.plot(hidden_layers, train_acc, label = 'Train Accuracy')
+plt.plot(hidden_layers, test_acc, label ='Test Accuracy')
 plt.xlabel("Number of Hidden Units")
 plt.ylabel("Accuracy")
-plt.title("Comparison of Hidden Layers to Train and Test Accuracy")
+plt.title("Comparison between the Quantity of Hidden Layers to Train Accuracy and Test Accuracy")
 plt.legend()
-plt.savefig(os.path.join(results_dir, 'figure2.png'))
+plt.savefig('/lyceum/jhj1g23/Deep-Learning-Learning/lab4/results/train_accuracy_and_test_acccuracy')
 plt.show()
+print("Training stopped early for layers:", stopped_layers)
