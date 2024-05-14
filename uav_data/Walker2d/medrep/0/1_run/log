@@ -1,0 +1,24 @@
+2024-05-10 22:16:02,894 | seed: 1
+2024-05-10 22:16:02,896 | env_name: Walker2d
+2024-05-10 22:16:02,896 | dataset: medrep
+2024-05-10 22:16:02,896 | discrete_control: 0
+2024-05-10 22:16:02,896 | state_dim: 17
+2024-05-10 22:16:02,896 | action_dim: 6
+2024-05-10 22:16:02,896 | tau: 0.5
+2024-05-10 22:16:02,896 | max_steps: 1000000
+2024-05-10 22:16:02,897 | log_interval: 10000
+2024-05-10 22:16:02,897 | learning_rate: 0.0003
+2024-05-10 22:16:02,897 | hidden_units: 256
+2024-05-10 22:16:02,897 | batch_size: 256
+2024-05-10 22:16:02,897 | timeout: 1000
+2024-05-10 22:16:02,897 | gamma: 0.99
+2024-05-10 22:16:02,897 | use_target_network: 1
+2024-05-10 22:16:02,897 | target_network_update_freq: 1
+2024-05-10 22:16:02,897 | polyak: 0.995
+2024-05-10 22:16:02,897 | evaluation_criteria: return
+2024-05-10 22:16:02,897 | device: cpu
+2024-05-10 22:16:02,897 | info: 0
+2024-05-10 22:16:02,897 | exp_path: /mainfs/lyceum/jhj1g23/deeplearningpaper/inac_pytorch/data/output/Walker2d/medrep/0/1_run
+2024-05-10 22:16:15,075 | TRAIN LOG: steps 0, episodes   0, returns -10.03/-9.99/-10.20/-9.88/5 (mean/median/min/max/num), 168733.26 steps/s
+2024-05-10 22:16:15,127 | TEST LOG: steps 0, episodes   0, returns -9.79/-9.95/-10.16/-9.00/5 (mean/median/min/max/num), 168733.26 steps/s
+2024-05-10 22:16:15,127 | Normalized LOG: steps 0, episodes   0, returns -0.00/-0.00/-0.00/-0.00/5 (mean/median/min/max/num), 168733.26 steps/s
