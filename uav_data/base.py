@@ -154,29 +154,29 @@ class Agent:
         for idx in range(len(train_s)):
             self.replay.feed([train_s[idx], train_a[idx], train_r[idx], train_ns[idx], train_t[idx]])
     def step(self):
-    if self.reset:
-        self.state = self.env.reset()
-        self.reset = False
-
-    action = self.policy(self.state)
+        if self.reset:
+            self.state = self.env.reset()
+            self.reset = False
     
-    next_state, reward, done, _ = self.env.step(action)
-    
-    self.replay.feed([self.state, action, reward, next_state, done])
-    
-    self.state = next_state
-    
-    self.update_stats(reward, done)
-    
-    if self.replay.size() >= self.batch_size:
-        data = self.get_data()
-        losses = self.update(data)
-        return losses
-    
-    if done:
-        self.reset = True
-    
-    return None
+        action = self.policy(self.state)
+        
+        next_state, reward, done, _ = self.env.step(action)
+        
+        self.replay.feed([self.state, action, reward, next_state, done])
+        
+        self.state = next_state
+        
+        self.update_stats(reward, done)
+        
+        if self.replay.size() >= self.batch_size:
+            data = self.get_data()
+            losses = self.update(data)
+            return losses
+        
+        if done:
+            self.reset = True
+        
+        return None
 
     
     def update(self, data):
