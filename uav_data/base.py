@@ -153,13 +153,31 @@ class Agent:
         train_s, train_a, train_r, train_ns, train_t = self.trainset
         for idx in range(len(train_s)):
             self.replay.feed([train_s[idx], train_a[idx], train_r[idx], train_ns[idx], train_t[idx]])
-
     def step(self):
-        # trans = self.feed_data()
-        self.update_stats(0, None)
+    if self.reset:
+        self.state = self.env.reset()
+        self.reset = False
+
+    action = self.policy(self.state)
+    
+    next_state, reward, done, _ = self.env.step(action)
+    
+    self.replay.feed([self.state, action, reward, next_state, done])
+    
+    self.state = next_state
+    
+    self.update_stats(reward, done)
+    
+    if self.replay.size() >= self.batch_size:
         data = self.get_data()
         losses = self.update(data)
         return losses
+    
+    if done:
+        self.reset = True
+    
+    return None
+
     
     def update(self, data):
         raise NotImplementedError
