@@ -96,6 +96,30 @@ class InSampleAC(base.Agent):
         self.ac.q1q2.load_state_dict(torch.load(critic_path, map_location=self.device))
         self.value_net.load_state_dict(torch.load(vs_path, map_location=self.device))
 
+    def step(self):
+        if self.reset:
+            self.state = self.env.reset()
+            self.reset = False
+    
+        action = self.policy(self.state)
+        
+        next_state, reward, done, _ = self.env.step(action)
+        
+        self.replay.feed([self.state, action, reward, next_state, done])
+        
+        self.state = next_state
+        
+        self.update_stats(reward, done)
+        
+        if self.replay.size() >= self.batch_size:
+            data = self.get_data()
+            losses = self.update(data)
+            return losses
+        
+        if done:
+            self.reset = True
+        
+        return None
 
     def compute_loss_beh_pi(self, data):
         """L_{\omega}, learn behavior policy"""
@@ -186,6 +210,16 @@ class InSampleAC(base.Agent):
                 "logp_info": logp_info.mean(),
                 }
 
+    def get_q_value_discrete(self, o, a, with_grad=False):
+        if with_grad:
+            q1_pi, q2_pi = self.ac.q1q2(o)
+            q1_pi, q2_pi = q1_pi[np.arange(len(a)), a], q2_pi[np.arange(len(a)), a]
+            q_pi = torch.min(q1_pi, q2_pi)
+        else:
+            with torch.no_grad():
+                q1_pi, q2_pi = self.ac.q1q2(o)
+                q1_pi, q2_pi = q1_pi[np.arange(len(a)), a], q2_pi[np.arange(len(a)), a]
+                q_pi = torch.min(q1_pi, q2_pi)
 
     def get_q_value_discrete(self, o, a, with_grad=False):
         if with_grad:
